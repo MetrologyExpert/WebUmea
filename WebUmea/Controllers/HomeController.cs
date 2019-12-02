@@ -26,5 +26,12 @@ namespace WebUmea.Controllers
 
             return View();
         }
+
+        public ActionResult Instruments()
+        {
+            ViewBag.Message = "Instrument page.";
+
+            return View();
+        }
     }
 }

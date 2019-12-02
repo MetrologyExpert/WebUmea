@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebUmea.Models.Instrument>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+@using (Html.BeginForm("New", "InstMenu"))
+{
+
+    <button type="submit" class="btn btn-primary"> Add New  </button>
+
+
+}
+<br />
+<br />
+
+<table>
+    <tr>
+        <th>InstrumentName</th>
+        <th>Instrument Model</th>
+        <th>Description</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.InstrumentName.ToString()</td>
+            <td>@item.InstrumentModel.ToString()</td>
+            <td>@item.Description.ToString()</td>
+        </tr>
+    }
+</table>
+
+
+

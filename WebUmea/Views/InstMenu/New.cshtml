@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WebUmea.Models.Instrument>
+
+@{
+    string InstrumentIntroduction = "Add new instrument";
+}
+
+@using (Html.BeginForm("Create", "InstMenu"))
+{
+
+    @Html.ValidationSummary(true, "Please fix the following errors")
+
+    <div class="form-group">
+        <h2>@Html.Label(InstrumentIntroduction) </h2>
+        <br />
+        @Html.LabelFor(m => m.InstrumentName)
+        @Html.TextBoxFor(m => m.InstrumentName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.InstrumentName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.InstrumentModel)
+        @Html.TextBoxFor(m => m.InstrumentModel, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.InstrumentModel)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Description)
+    </div>
+
+    <button type="submit" class="btn btn-primary"> Save  </button>
+}
+
+

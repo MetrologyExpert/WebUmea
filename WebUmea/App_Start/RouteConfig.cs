@@ -14,6 +14,14 @@ namespace WebUmea
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+           name: "Instrument",
+           url: "instrument/{id}",
+           defaults: new { controller = "Instrument", action = "Index" }
+       );
+
+
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
