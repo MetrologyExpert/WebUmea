@@ -41,8 +41,19 @@ namespace WebUmea.Controllers
         [HttpPost]
         public ActionResult Create(Instrument instrument)
         {
-            
-            return View();
+           _context.Instruments.Add(instrument);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index","InstMenu");
         }
+
+   
+        public ActionResult Details(int id)
+        {
+            var idNumber = _context.Instruments.SingleOrDefault(c => c.InstrumentId == id);
+
+            return View("New");
+        }
+
     }
 }

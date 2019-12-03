@@ -341,7 +341,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: ##1b9bd7;
   text-decoration: underline;
 }
 
@@ -1486,7 +1486,8 @@ th {
 
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
-    background-color: #90d2d8;
+    background-color: #1b9bd7;
+    /*#1b9bd7 #90d2d8*/
 }
 
 table col[class*="col-"] {
@@ -4919,7 +4920,7 @@ a.badge:focus {
 
 a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #428bca;
+  color:#000000 /*#428bca*/;
   background-color: #ffffff;
 }
 

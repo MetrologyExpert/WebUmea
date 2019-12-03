@@ -19,20 +19,27 @@
 <br />
 <br />
 
-<table class="table">
+<table class="table table-hover">
     <tr>
         <th>InstrumentName</th>
         <th>Instrument Model</th>
         <th>Description</th>
     </tr>
-
+    
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.InstrumentName.ToString()</td>
-            <td>@item.InstrumentModel.ToString()</td>
-            <td>@item.Description.ToString()</td>
-        </tr>
+    <tr>
+        <td>@Html.ActionLink(item.InstrumentName, "Details", new { id = item.InstrumentId})</td>
+        <td>@item.InstrumentModel.ToString()</td>
+        <td>@item.Description.ToString()</td>
+    </tr>
+
+
+        @*<td>@item.InstrumentName.ToString()</td>
+        <td>@item.InstrumentModel.ToString()</td>
+        <td>@item.Description.ToString()</td>*@
+ 
+            
     }
 </table>
 
