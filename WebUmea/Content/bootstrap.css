@@ -335,8 +335,8 @@ textarea {
 }
 
 a {
-  color: #428bca;
-  text-decoration: none;
+    color: #000000 /*#428bca*/;
+    text-decoration: none;
 }
 
 a:hover,

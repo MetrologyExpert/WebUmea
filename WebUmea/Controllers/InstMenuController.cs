@@ -14,9 +14,7 @@ namespace WebUmea.Controllers
 
         public InstMenuController()
         {
-
             _context = new ApplicationDbContext();
-
         }
 
         protected override void Dispose(bool disposing)
@@ -29,7 +27,6 @@ namespace WebUmea.Controllers
         public ActionResult Index()
         {
             var instrumentList = _context.Instruments.ToList();
-
             return View(instrumentList);
         }
 
@@ -47,13 +44,16 @@ namespace WebUmea.Controllers
             return RedirectToAction("Index","InstMenu");
         }
 
-   
+
         public ActionResult Details(int id)
         {
             var idNumber = _context.Instruments.SingleOrDefault(c => c.InstrumentId == id);
 
-            return View("New");
+            Instrument instrument = idNumber;
+
+            return View("New", instrument);
         }
+
 
     }
 }
