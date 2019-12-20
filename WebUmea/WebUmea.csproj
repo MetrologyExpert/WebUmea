@@ -212,11 +212,37 @@
     <Compile Include="Migrations\201911251600319_AddDataToInstrument.designer.cs">
       <DependentUpon>201911251600319_AddDataToInstrument.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912171256545_AddNewFieldsToRegister.cs" />
+    <Compile Include="Migrations\201912171256545_AddNewFieldsToRegister.designer.cs">
+      <DependentUpon>201912171256545_AddNewFieldsToRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912171302529_AddNewFieldsToRegister0.cs" />
+    <Compile Include="Migrations\201912171302529_AddNewFieldsToRegister0.designer.cs">
+      <DependentUpon>201912171302529_AddNewFieldsToRegister0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912171308439_AddNewFieldsToRegister1.cs" />
+    <Compile Include="Migrations\201912171308439_AddNewFieldsToRegister1.designer.cs">
+      <DependentUpon>201912171308439_AddNewFieldsToRegister1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912171344352_AddUsers.cs" />
+    <Compile Include="Migrations\201912171344352_AddUsers.designer.cs">
+      <DependentUpon>201912171344352_AddUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912201010441_SeedUsers.cs" />
+    <Compile Include="Migrations\201912201010441_SeedUsers.designer.cs">
+      <DependentUpon>201912201010441_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912201228000_newInstrumenttable.cs" />
+    <Compile Include="Migrations\201912201228000_newInstrumenttable.designer.cs">
+      <DependentUpon>201912201228000_newInstrumenttable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instrument.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RegisterUserViewModel.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -243,7 +269,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -293,6 +321,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -316,6 +345,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911251600319_AddDataToInstrument.resx">
       <DependentUpon>201911251600319_AddDataToInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912171256545_AddNewFieldsToRegister.resx">
+      <DependentUpon>201912171256545_AddNewFieldsToRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912171302529_AddNewFieldsToRegister0.resx">
+      <DependentUpon>201912171302529_AddNewFieldsToRegister0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912171308439_AddNewFieldsToRegister1.resx">
+      <DependentUpon>201912171308439_AddNewFieldsToRegister1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912171344352_AddUsers.resx">
+      <DependentUpon>201912171344352_AddUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912201010441_SeedUsers.resx">
+      <DependentUpon>201912201010441_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912201228000_newInstrumenttable.resx">
+      <DependentUpon>201912201228000_newInstrumenttable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

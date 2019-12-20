@@ -8,6 +8,7 @@ using WebUmea.Models;
 
 namespace WebUmea.Controllers
 {
+   
     public class InstMenuController : Controller
     {
         private ApplicationDbContext _context;
@@ -27,7 +28,12 @@ namespace WebUmea.Controllers
         public ActionResult Index()
         {
             var instrumentList = _context.Instruments.ToList();
-            return View(instrumentList);
+
+
+           
+            
+                return View(instrumentList);
+           
         }
 
         public ActionResult New()
@@ -35,6 +41,7 @@ namespace WebUmea.Controllers
             return View();
         }
 
+    
         [HttpPost]
         public ActionResult Create(Instrument instrument)
         {
