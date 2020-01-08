@@ -8,6 +8,7 @@ using WebUmea.Models;
 
 namespace WebUmea.Controllers
 {
+    //Comment
    
     public class InstMenuController : Controller
     {
@@ -29,11 +30,11 @@ namespace WebUmea.Controllers
         {
             var instrumentList = _context.Instruments.ToList();
 
-
-           
+            if (User.IsInRole("CanManageInstruments"))
             
                 return View(instrumentList);
-           
+            else
+                return View("Error");
         }
 
         public ActionResult New()

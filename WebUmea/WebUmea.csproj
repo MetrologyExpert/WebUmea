@@ -236,13 +236,21 @@
     <Compile Include="Migrations\201912201228000_newInstrumenttable.designer.cs">
       <DependentUpon>201912201228000_newInstrumenttable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912201544178_AddUser.cs" />
+    <Compile Include="Migrations\201912201544178_AddUser.designer.cs">
+      <DependentUpon>201912201544178_AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912201609016_AddUserProfile.cs" />
+    <Compile Include="Migrations\201912201609016_AddUserProfile.designer.cs">
+      <DependentUpon>201912201609016_AddUserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instrument.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RegisterUserViewModel.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -318,6 +326,7 @@
     <Content Include="Views\Instruments\Details.cshtml" />
     <Content Include="Views\Instruments\Edit.cshtml" />
     <Content Include="Views\Instruments\Index.cshtml" />
+    <Content Include="Views\InstMenu\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -363,6 +372,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912201228000_newInstrumenttable.resx">
       <DependentUpon>201912201228000_newInstrumenttable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912201544178_AddUser.resx">
+      <DependentUpon>201912201544178_AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912201609016_AddUserProfile.resx">
+      <DependentUpon>201912201609016_AddUserProfile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

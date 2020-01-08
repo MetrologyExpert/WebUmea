@@ -8,6 +8,6 @@ namespace WebUmea.Models
     public class RegisterUserViewModel
     {
         public RegisterViewModel RegisterViewModels { get; set; }
-        public User Users { get; set; }
+        public UserProfile Users { get; set; }
     }
 }

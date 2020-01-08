@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebUmea.Models
 {
-    public class User
+    public class UserProfile
     {   [Key]
         public int IDUser { get; set; }
 
