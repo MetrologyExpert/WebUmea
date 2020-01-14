@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using WebUmea.Models;
 
+// A commit test
+
 namespace WebUmea.Controllers
 {
     public class InstrumentsController : Controller
