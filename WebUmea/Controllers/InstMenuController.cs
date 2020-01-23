@@ -30,11 +30,11 @@ namespace WebUmea.Controllers
         {
             var instrumentList = _context.Instruments.ToList();
 
-            if (User.IsInRole("CanManageInstruments"))
+           // if (User.IsInRole("CanManageInstruments"))
             
                 return View(instrumentList);
-            else
-                return View("Error");
+           // else
+               // return View("Error");
         }
 
         public ActionResult New()
