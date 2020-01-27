@@ -13,32 +13,6 @@
     <h4>Create a new account.</h4>
     <hr />
 
-    //Add User field
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Users.FirstName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Users.FirstName, new { @class = "form-control" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Users.LastName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Users.LastName, new { @class = "form-control" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Users.Company, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Users.Company, new { @class = "form-control" })
-        </div>
-    </div>
-
-
-
     //Change RegisterViewModel
     <div class="form-group">
         @Html.LabelFor(m => m.RegisterViewModels.Email, new { @class = "col-md-2 control-label" })

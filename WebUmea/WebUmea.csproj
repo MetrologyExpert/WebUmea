@@ -244,13 +244,24 @@
     <Compile Include="Migrations\201912201609016_AddUserProfile.designer.cs">
       <DependentUpon>201912201609016_AddUserProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001271248513_AddUserProfileTable.cs" />
+    <Compile Include="Migrations\202001271248513_AddUserProfileTable.designer.cs">
+      <DependentUpon>202001271248513_AddUserProfileTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001271303124_AddUserProfileTableAgain.cs" />
+    <Compile Include="Migrations\202001271303124_AddUserProfileTableAgain.designer.cs">
+      <DependentUpon>202001271303124_AddUserProfileTableAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001271338069_RemoveUserProfileTable.cs" />
+    <Compile Include="Migrations\202001271338069_RemoveUserProfileTable.designer.cs">
+      <DependentUpon>202001271338069_RemoveUserProfileTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instrument.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RegisterUserViewModel.cs" />
-    <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -393,7 +404,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -441,6 +451,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912201609016_AddUserProfile.resx">
       <DependentUpon>201912201609016_AddUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271248513_AddUserProfileTable.resx">
+      <DependentUpon>202001271248513_AddUserProfileTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271303124_AddUserProfileTableAgain.resx">
+      <DependentUpon>202001271303124_AddUserProfileTableAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271338069_RemoveUserProfileTable.resx">
+      <DependentUpon>202001271338069_RemoveUserProfileTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
