@@ -1,0 +1,29 @@
+﻿@model WebUmea.Models.RegisterUserViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Profile</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayFor(model => model.RegisterViewModels.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisterViewModels.Company)
+        </dd>
+
+        <dt>
+            @Html.DisplayFor(model => model.RegisterViewModels.Email)
+        </dt>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("View Profile", "ProfileView") |
+    @Html.ActionLink("Back to List", "Index")
+</p>

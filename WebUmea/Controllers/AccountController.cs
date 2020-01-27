@@ -162,6 +162,8 @@ namespace WebUmea.Controllers
             {
                 var user = new ApplicationUser
                 {
+                    Name = model.RegisterViewModels.Name,
+                    Company = model.RegisterViewModels.Company,
                     UserName = model.RegisterViewModels.Email,
                     Email = model.RegisterViewModels.Email
                 };
@@ -444,6 +446,21 @@ namespace WebUmea.Controllers
 
             base.Dispose(disposing);
         }
+
+        // POST: /Account/Register
+        [HttpGet]
+        [AllowAnonymous]
+     
+        public ActionResult ProfileView(RegisterUserViewModel model)
+        {
+           
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+
+
 
         #region Helpers
         // Used for XSRF protection when adding external logins

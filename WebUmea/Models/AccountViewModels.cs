@@ -64,7 +64,17 @@ namespace WebUmea.Models
 
     public class RegisterViewModel
     {
-              
+        [Required]
+        [Display(Name = "Full Name")]
+        public string Name { get; set; }
+
+        [Required]
+        [Display(Name = "Company")]
+        public string Company { get; set; }
+
+
+        //Original starts from here 
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
