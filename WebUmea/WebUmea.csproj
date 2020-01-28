@@ -191,7 +191,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstMenuController.cs" />
@@ -264,6 +263,10 @@
     <Compile Include="Migrations\202001271402236_removeUserId.cs" />
     <Compile Include="Migrations\202001271402236_removeUserId.designer.cs">
       <DependentUpon>202001271402236_removeUserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001281423409_SeedUsers1.cs" />
+    <Compile Include="Migrations\202001281423409_SeedUsers1.designer.cs">
+      <DependentUpon>202001281423409_SeedUsers1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -397,7 +400,7 @@
     <Content Include="Views\Main\Contactus.cshtml" />
     <Content Include="Views\InstMenu\New.cshtml" />
     <Content Include="Views\InstMenu\New1.cshtml" />
-    <Content Include="Views\InstMenu\Details.cshtml" />
+    <Content Include="Views\InstMenu\PageView.cshtml" />
     <Content Include="Views\Demo\Index.cshtml" />
     <Content Include="Views\Instruments\Create.cshtml" />
     <Content Include="Views\Instruments\Delete.cshtml" />
@@ -412,7 +415,6 @@
     <Content Include="Views\Instruments\Create - Copy.cshtml" />
     <Content Include="Views\Instruments\Edit - Copy.cshtml" />
     <Content Include="Views\Account\ProfileView.cshtml" />
-    <Content Include="Views\Administration\CreateRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -478,6 +480,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001271402236_removeUserId.resx">
       <DependentUpon>202001271402236_removeUserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001281423409_SeedUsers1.resx">
+      <DependentUpon>202001281423409_SeedUsers1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

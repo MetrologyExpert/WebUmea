@@ -53,6 +53,17 @@ namespace WebUmea.Controllers
         }
 
 
+        public ActionResult PageView(int id)
+        {
+            var idNumber = _context.Instruments.SingleOrDefault(c => c.InstrumentId == id);
+
+            Instrument instrument = idNumber;
+
+            return View("PageView", instrument);
+        }
+
+
+
         public ActionResult Details(int id)
         {
             var idNumber = _context.Instruments.SingleOrDefault(c => c.InstrumentId == id);
