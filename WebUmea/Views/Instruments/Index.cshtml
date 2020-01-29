@@ -1,15 +1,19 @@
-﻿@model IEnumerable<WebUmea.Models.Instrument>
+﻿@using System.Text.RegularExpressions
+@model IEnumerable<WebUmea.Models.Instrument>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Instrument List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<br />
+<h4><b>Instrument List</b></h4>
+<br />
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button type="submit" class="btn btn-outline-primary"> @Html.ActionLink("Create New", "Create")</button>
 </p>
+<br />
 <table class="table">
     <tr>
         <th>
@@ -21,26 +25,51 @@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th></th>
+        <th>
+            @*Header Space*@
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.InstrumentName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InstrumentModel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.InstrumentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.InstrumentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.InstrumentId })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstrumentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstrumentModel)
+            </td>
+            <td>
+                @*@Regex.Replace(item.Description,"@< (.| n) *?>", string.Empty)*@
+                @Html.Raw(item.Description)
+                @*@Html.DisplayFor(modelItem => item.Description)*@
+            </td>
+            <td>
+                @Html.DropDownList(
+                                        "url",
+                                        new SelectList(new[]
+                                        {
+                                new SelectListItem { Text = "Page View", Value = Url.Action("Details", new { id = item.InstrumentId }) },
+                                new SelectListItem { Text = "Edit Page", Value = Url.Action("Edit", new { id = item.InstrumentId }) },
+                                new SelectListItem { Text = "Delete Page", Value = Url.Action("Delete",new { id = item.InstrumentId })},
+                                        }, "Value", "Text"),
+                                        "Select Action",
+                                        new { id = "urlddl", @class = "btn btn-primary" }
+                                              )
+            </td>
+        </tr>
+    }
 </table>
+@section scripts{
+
+    <script>
+        $(function () {
+            $('#urlddl').change(function () {
+                var url = $(this).val();
+                if (url != null && url != '') {
+                    window.location.href = url;
+                }
+            });
+        });
+    </script>
+}

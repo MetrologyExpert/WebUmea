@@ -24,7 +24,7 @@ namespace WebUmea
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-litera.css",
                       "~/Content/site.css"));
         }
     }

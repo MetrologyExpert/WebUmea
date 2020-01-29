@@ -1,19 +1,18 @@
 ﻿@model WebUmea.Models.Instrument
 
 @{
-    ViewBag.Title = "Edit Post";
+    ViewBag.Title = "Edit Instrument Sheet";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
-
+<br/>
+<h4><b>Edit Instrument Sheet</b></h4>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Edit</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.InstrumentId)
@@ -44,14 +43,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+<button class="btn btn-outline-primary"> @Html.ActionLink("Back to List", "Index")</button>
 </div>
 
 @section Scripts {
@@ -60,8 +59,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 
-    @*<link href="C:\Users\Peter Benko\source\repos\SummerNoteIntegration01\SummerNoteIntegration01\SummerNote\dist\summernote-bs4.css" rel="stylesheet">
-        <script src=" C:\Users\Peter Benko\source\repos\SummerNoteIntegration01\SummerNoteIntegration01\SummerNote\dist\summernote-bs4.js"></script>*@
+    <link href="C:\Users\Peter Benko\source\repos\SummerNoteIntegration01\SummerNoteIntegration01\SummerNote\dist\summernote-bs4.css" rel="stylesheet">
+    <script src=" C:\Users\Peter Benko\source\repos\SummerNoteIntegration01\SummerNoteIntegration01\SummerNote\dist\summernote-bs4.js"></script>
 
     <script>
         $('#summernote').summernote({
