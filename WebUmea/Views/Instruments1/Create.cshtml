@@ -41,7 +41,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -54,54 +54,46 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
-
-    <script>
-        $('#summernote').summernote('insertText', 'hello world');
-
-
-    </script>
-
-
-
-
-
-
+    @*<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>*@
 
     @*<link href="C:\Users\Peter Benko\source\repos\SummerNoteIntegration01\SummerNoteIntegration01\SummerNote\dist\summernote-bs4.css" rel="stylesheet">
         <script src=" C:\Users\Peter Benko\source\repos\SummerNoteIntegration01\SummerNoteIntegration01\SummerNote\dist\summernote-bs4.js"></script>*@
 
 
-    @*<script>
-            $('#summernote').summernote({
-                height: ($(window).height() - 300),
-                callbacks: {
-                    onImageUpload: function (image) {
-                        uploadImage(image[0]);
-                    }
-                }
-            });
 
-        function uploadImage(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: 'Your url to deal with your image',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function (url) {
-                    var image = $('<img>').attr('src', 'http://' + url);
-                    $('#summernote').summernote("insertNode", image[0]);
-                },
-                error: function (data) {
-                    console.log(data);
-                }
-            });
-        }
+    @*<script>
+        $('#summernote').summernote({
+            placeholder: 'Post something new',
+            tabsize: 2,
+            height: 300
+        });
     </script>*@
+
+    <script>
+
+  
+
+
+        //function uploadImage(image) {
+        //    var data = new FormData();
+        //    data.append("image", image);
+        //    $.ajax({
+        //        url: 'Your url to deal with your image',
+        //        cache: false,
+        //        contentType: false,
+        //        processData: false,
+        //        data: data,
+        //        type: "post",
+        //        success: function (url) {
+        //            var image = $('<img>').attr('src', 'http://' + url);
+        //            $('#summernote').summernote("insertNode", image[0]);
+        //        },
+        //        error: function (data) {
+        //            console.log(data);
+        //        }
+        //    });
+        //}
+    </script>
 
 }

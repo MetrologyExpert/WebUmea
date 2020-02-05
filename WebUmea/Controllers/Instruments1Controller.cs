@@ -8,21 +8,19 @@ using System.Web;
 using System.Web.Mvc;
 using WebUmea.Models;
 
-// A commit test
-
 namespace WebUmea.Controllers
 {
-    public class InstrumentsController : Controller
+    public class Instruments1Controller : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Instruments
+        // GET: Instruments1
         public ActionResult Index()
         {
             return View(db.Instruments.ToList());
         }
 
-        // GET: Instruments/Details/5
+        // GET: Instruments1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -60,7 +58,7 @@ namespace WebUmea.Controllers
             return View(instrument);
         }
 
-        // GET: Instruments/Edit/5
+        // GET: Instruments1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -75,7 +73,7 @@ namespace WebUmea.Controllers
             return View(instrument);
         }
 
-        // POST: Instruments/Edit/5
+        // POST: Instruments1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -91,7 +89,7 @@ namespace WebUmea.Controllers
             return View(instrument);
         }
 
-        // GET: Instruments/Delete/5
+        // GET: Instruments1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -106,7 +104,7 @@ namespace WebUmea.Controllers
             return View(instrument);
         }
 
-        // POST: Instruments/Delete/5
+        // POST: Instruments1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
