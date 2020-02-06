@@ -12,14 +12,27 @@ using WebUmea.Models;
 
 namespace WebUmea.Controllers
 {
+
+
     public class InstrumentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        
         // GET: Instruments
-        public ActionResult Index()
+        public ActionResult AdminView()
         {
-            return View(db.Instruments.ToList());
+            var instrumentList = db.Instruments.ToList();
+
+            if (User.IsInRole("Administrator"))
+            {
+                return View("AdminView", instrumentList);
+            }
+            else
+            {
+                return View("UserView", instrumentList);
+            }
+
         }
 
         // GET: Instruments/Details/5
@@ -37,7 +50,9 @@ namespace WebUmea.Controllers
             return View(instrument);
         }
 
-        // GET: Instruments1/Create
+
+     
+        // GET: Instruments/Create
         public ActionResult Create()
         {
             return View();
@@ -59,6 +74,8 @@ namespace WebUmea.Controllers
 
             return View(instrument);
         }
+
+
 
         // GET: Instruments/Edit/5
         public ActionResult Edit(int? id)

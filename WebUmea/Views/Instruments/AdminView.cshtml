@@ -1,0 +1,69 @@
+﻿@using System.Text.RegularExpressions
+@model IEnumerable<WebUmea.Models.Instrument>
+
+@{
+    ViewBag.Title = "Instrument List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h4><b>Instrument List</b></h4>
+<br />
+
+<p>
+    <button type="submit" class="btn btn-outline-primary"> @Html.ActionLink("Create New", "Create")</button>
+</p>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InstrumentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstrumentModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @*Header Space*@
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstrumentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstrumentModel)
+        </td>
+        <td>
+            @*@Regex.Replace(item.Description,"@< (.| n) *?>", string.Empty)*@
+            @Html.Raw(item.Description)
+            @*@Html.DisplayFor(modelItem => item.Description)*@
+        </td>
+      
+        <td>
+            <button class="btn btn-outline-primary"> @Html.ActionLink("Page View", "Details", new { id = item.InstrumentId })</button>
+            <button class="btn btn-outline-primary"> @Html.ActionLink("Edit Page", "Edit", new { id = item.InstrumentId })</button>
+            <button class="btn btn-outline-primary"> @Html.ActionLink("Delete Page", "Delete", new { id = item.InstrumentId })</button>
+        </td>
+    </tr>
+      
+    }
+</table>
+@section scripts{
+
+    <script>
+        $(function () {
+            $('#urlddl').change(function () {
+                var url = $(this).val();
+                if (url != null && url != '') {
+                    window.location.href = url;
+                }
+            });
+        });
+    </script>
+}

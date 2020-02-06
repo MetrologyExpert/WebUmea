@@ -5,14 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Instrument</h4>
+        <h4>Create Instrument List</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -58,18 +58,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 
     <script>
-        $('#summernote').summernote('insertText', 'hello world');
+        // Initialize plugin
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                toolbar: [
+                    //[groupname, [button list]]
+
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['h1']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']],
+                    ['picture']
+                ]
+            });
+        });
 
 
     </script>
 
-
-
-
-
-
-
-    @*<link href="C:\Users\Peter Benko\source\repos\SummerNoteIntegration01\SummerNoteIntegration01\SummerNote\dist\summernote-bs4.css" rel="stylesheet">
+        @*<link href="C:\Users\Peter Benko\source\repos\SummerNoteIntegration01\SummerNoteIntegration01\SummerNote\dist\summernote-bs4.css" rel="stylesheet">
         <script src=" C:\Users\Peter Benko\source\repos\SummerNoteIntegration01\SummerNoteIntegration01\SummerNote\dist\summernote-bs4.js"></script>*@
 
 

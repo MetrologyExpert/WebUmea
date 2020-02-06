@@ -38,9 +38,11 @@
     </dl>
 </div>
 <p>
-    <button type="submit" class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new { Id = Model.InstrumentId })</button>
+    @if (User.IsInRole("Administrator"))
+    {
+        <button type="submit" class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new { Id = Model.InstrumentId })</button>
+    }
 
-
-    <button type="submit" class="btn btn-outline-primary">@Html.ActionLink("Back to List", "Index")</button>
+    <button type="submit" class="btn btn-outline-primary">@Html.ActionLink("Back to List", "AdminView")</button>
 
 </p>

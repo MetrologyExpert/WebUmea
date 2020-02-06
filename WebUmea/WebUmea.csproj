@@ -194,7 +194,6 @@
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstMenuController.cs" />
-    <Compile Include="Controllers\Instruments1Controller.cs" />
     <Compile Include="Controllers\InstrumentsController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -407,23 +406,20 @@
     <Content Include="Views\InstMenu\New1.cshtml" />
     <Content Include="Views\InstMenu\PageView.cshtml" />
     <Content Include="Views\Demo\Index.cshtml" />
-    <Content Include="Views\Instruments\Delete.cshtml" />
-    <Content Include="Views\Instruments\Details.cshtml" />
-    <Content Include="Views\Instruments\Edit.cshtml" />
-    <Content Include="Views\Instruments\Index.cshtml" />
     <Content Include="Views\InstMenu\Error.cshtml" />
     <Content Include="Summernote\dist\font\summernote.eot" />
     <Content Include="Summernote\dist\font\summernote.ttf" />
     <Content Include="Summernote\dist\font\summernote.woff" />
     <Content Include="Views\InstMenu\Index.cshtml" />
-    <Content Include="Views\Instruments\Edit - Copy.cshtml" />
     <Content Include="Views\Account\ProfileView.cshtml" />
-    <Content Include="Views\Instruments1\Create.cshtml" />
-    <Content Include="Views\Instruments1\Delete.cshtml" />
-    <Content Include="Views\Instruments1\Details.cshtml" />
-    <Content Include="Views\Instruments1\Edit.cshtml" />
-    <Content Include="Views\Instruments1\Index.cshtml" />
+    <Content Include="Views\Instruments\AdminView.cshtml" />
     <Content Include="Views\Instruments\Create.cshtml" />
+    <Content Include="Views\Instruments\Delete.cshtml" />
+    <Content Include="Views\Instruments\Details.cshtml" />
+    <Content Include="Views\Instruments\Edit - Copy.cshtml" />
+    <Content Include="Views\Instruments\Edit.cshtml" />
+    <Content Include="Views\Instruments\UserView.cshtml" />
+    <Content Include="Views\Instruments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

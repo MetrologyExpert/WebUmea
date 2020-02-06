@@ -176,8 +176,8 @@ namespace WebUmea.Controllers
                     //Temp Code
                     //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
                     //var roleManager = new RoleManager<IdentityRole>(roleStore);
-                    //await roleManager.CreateAsync(new IdentityRole("Editor"));
-                    //await UserManager.AddToRoleAsync(user.Id, "Editor");
+                    //await roleManager.CreateAsync(new IdentityRole("Administrator"));
+                    //await UserManager.AddToRoleAsync(user.Id, "Administrator");
 
 
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
