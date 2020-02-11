@@ -7,6 +7,8 @@ namespace WebUmea.Models
 {
     public class DemoObject
     {
+        public List<Instrument> Instruments { get; set; }
+
         public int UbId { get; set; }
         public string InstrumentNames { get; set; }
         public int ContributionIds { get; set; }
@@ -14,5 +16,8 @@ namespace WebUmea.Models
         public double ContributionEstimatedValue { get; set; }
         public double ContributionSensitivityCoefficient { get; set; }
         public double StandardUncertainty { get; set; }
+
+        public int InstrumentId { get; set; }
+        public string InstrumentName { get; set; }
     }
 }

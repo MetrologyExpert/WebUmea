@@ -7,6 +7,11 @@
 
 <h2>Demo-Uncertainty</h2>
 
+<br />
+@Html.Partial("~/Views/Instruments/_InstrumentBox.cshtml")
+
+
+
 <table class="table">
     <tr>
         <th>Uncertainty Id</th>
@@ -18,7 +23,6 @@
     </tr>
     @foreach (var item in Model)
     {
-
         <tr>
             <td>@item.UbId</td>
             <td>@item.ContributionIds</td>
@@ -26,6 +30,10 @@
             <td>@item.ContributionEstimatedValue</td>
             <td>@item.ContributionSensitivityCoefficient</td>
             <td>@item.StandardUncertainty</td>
+
+            <td>@item.InstrumentId</td>
+            <td>@item.InstrumentName</td>
         </tr>
     }
 </table>
+

@@ -310,7 +310,6 @@
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\CreateRoleViewModel.cs" />
     <Compile Include="Models\DemoObject.cs" />
-    <Compile Include="Models\Demoobject01.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instrument.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -471,6 +470,7 @@
     <Content Include="Views\Contribution\Edit.cshtml" />
     <Content Include="Views\Contribution\Ind.cshtml" />
     <Content Include="Views\Contribution\Index.cshtml" />
+    <Content Include="Views\Instruments\_InstrumentBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
