@@ -20,6 +20,9 @@
             @Html.DisplayNameFor(model => model.InstrumentName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.InstrumentModel)
         </th>
         <th>
@@ -37,6 +40,9 @@
             @Html.DisplayFor(modelItem => item.InstrumentName)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Manufacturer)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.InstrumentModel)
         </td>
         <td>
@@ -44,7 +50,7 @@
             @Html.Raw(item.Description)
             @*@Html.DisplayFor(modelItem => item.Description)*@
         </td>
-      
+
         <td>
             <button class="btn btn-outline-primary"> @Html.ActionLink("Page View", "Details", new { id = item.InstrumentId })</button>
             <button class="btn btn-outline-primary"> @Html.ActionLink("Edit Page", "Edit", new { id = item.InstrumentId })</button>

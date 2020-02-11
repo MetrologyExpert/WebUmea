@@ -1,0 +1,76 @@
+﻿@model WebUmea.ViewModel.ContributionViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Add New Uncertainty Contribution", "Create")
+</p>
+<table class="table">
+    @*<tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UncertaintyBudget.UbId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstimatedValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PdfId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StandardUncertainty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SensitivityCoefficient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uncertainty)
+        </th>
+        <th></th>
+    </tr>*@
+
+@foreach (var item in Model.Contributions) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UncertaintyBudget.UbId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Symbol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstimatedValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PdfId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StandardUncertainty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SensitivityCoefficient)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uncertainty)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ContributionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ContributionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ContributionId })
+        </td>
+    </tr>
+}
+
+</table>

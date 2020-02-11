@@ -30,7 +30,12 @@ namespace WebUmea.Models
         }
 
         public DbSet<Instrument> Instruments { get; set; }
- 
+        public DbSet<Contribution> Contributions { get; set; }
+        public DbSet<UncertaintyBudget> UncertaintyBudget { get; set; }
+        public DbSet<Pdf> Pdfs { get; set; }
+        public DbSet<Author> Authors { get; set; }
+
+        
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

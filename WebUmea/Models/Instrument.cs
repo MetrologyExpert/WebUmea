@@ -11,10 +11,16 @@ namespace WebUmea.Models
     {   
         [Key]
         public int InstrumentId { get; set; }
-        [Display(Name ="Instrument Name")]
+
+        [Display(Name ="Name")]
         public string InstrumentName { get; set; }
-        [Display(Name = "Instrument Model")]
+
+        [Display(Name = "Manufacturer")]
+        public string Manufacturer { get; set; }
+        
+        [Display(Name = "Model")]
         public string InstrumentModel { get; set; }
+
         [AllowHtml]
         [Display(Name = "Description")]
         public string  Description { get; set; }

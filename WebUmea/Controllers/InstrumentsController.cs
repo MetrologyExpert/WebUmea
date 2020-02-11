@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebUmea.Models;
+using WebUmea.ViewModel;
 
 // A commit test
 
@@ -18,7 +19,7 @@ namespace WebUmea.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        
+
         // GET: Instruments
         public ActionResult AdminView()
         {
@@ -42,7 +43,9 @@ namespace WebUmea.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Instrument instrument = db.Instruments.Find(id);
+
             if (instrument == null)
             {
                 return HttpNotFound();
@@ -58,18 +61,18 @@ namespace WebUmea.Controllers
             return View();
         }
 
-        // POST: Instruments1/Create
+        // POST: Instruments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "InstrumentId,InstrumentName,InstrumentModel,Description")] Instrument instrument)
+        public ActionResult Create([Bind(Include = "InstrumentId,InstrumentName,Manufacturer,InstrumentModel,Description")] Instrument instrument)
         {
             if (ModelState.IsValid)
             {
                 db.Instruments.Add(instrument);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("AdminView");
             }
 
             return View(instrument);
@@ -92,6 +95,7 @@ namespace WebUmea.Controllers
             return View(instrument);
         }
 
+
         // POST: Instruments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -108,6 +112,7 @@ namespace WebUmea.Controllers
             return View(instrument);
         }
 
+
         // GET: Instruments/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -123,6 +128,7 @@ namespace WebUmea.Controllers
             return View(instrument);
         }
 
+
         // POST: Instruments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -131,7 +137,7 @@ namespace WebUmea.Controllers
             Instrument instrument = db.Instruments.Find(id);
             db.Instruments.Remove(instrument);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("AdminView");
         }
 
         protected override void Dispose(bool disposing)

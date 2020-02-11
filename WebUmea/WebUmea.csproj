@@ -191,6 +191,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContributionController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstMenuController.cs" />
@@ -268,15 +269,59 @@
     <Compile Include="Migrations\202001281423409_SeedUsers1.designer.cs">
       <DependentUpon>202001281423409_SeedUsers1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002061617426_AddManufacurerToInstrumentClass.cs" />
+    <Compile Include="Migrations\202002061617426_AddManufacurerToInstrumentClass.designer.cs">
+      <DependentUpon>202002061617426_AddManufacurerToInstrumentClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002061620413_AddManufacurerToInstrumentChangeNameClass.cs" />
+    <Compile Include="Migrations\202002061620413_AddManufacurerToInstrumentChangeNameClass.designer.cs">
+      <DependentUpon>202002061620413_AddManufacurerToInstrumentChangeNameClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002071159000_NewModels_Uncertainty_Contribution_Pdfs.cs" />
+    <Compile Include="Migrations\202002071159000_NewModels_Uncertainty_Contribution_Pdfs.designer.cs">
+      <DependentUpon>202002071159000_NewModels_Uncertainty_Contribution_Pdfs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002071201067_NewModels_Uncertainty_Contribution_Pdfs01.cs" />
+    <Compile Include="Migrations\202002071201067_NewModels_Uncertainty_Contribution_Pdfs01.designer.cs">
+      <DependentUpon>202002071201067_NewModels_Uncertainty_Contribution_Pdfs01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002071311473_NewModels_Uncertainty_Contribution_Pdfs02.cs" />
+    <Compile Include="Migrations\202002071311473_NewModels_Uncertainty_Contribution_Pdfs02.designer.cs">
+      <DependentUpon>202002071311473_NewModels_Uncertainty_Contribution_Pdfs02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002071416077_ChangePdFModel.cs" />
+    <Compile Include="Migrations\202002071416077_ChangePdFModel.designer.cs">
+      <DependentUpon>202002071416077_ChangePdFModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002071420574_ContributionChange.cs" />
+    <Compile Include="Migrations\202002071420574_ContributionChange.designer.cs">
+      <DependentUpon>202002071420574_ContributionChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002071424201_SeedDatabase.cs" />
+    <Compile Include="Migrations\202002071424201_SeedDatabase.designer.cs">
+      <DependentUpon>202002071424201_SeedDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002071500149_CompleteModel.cs" />
+    <Compile Include="Migrations\202002071500149_CompleteModel.designer.cs">
+      <DependentUpon>202002071500149_CompleteModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Author.cs" />
     <Compile Include="Models\CreateRoleViewModel.cs" />
+    <Compile Include="Models\DemoObject.cs" />
+    <Compile Include="Models\Demoobject01.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instrument.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Pdf.cs" />
     <Compile Include="Models\RegisterUserViewModel.cs" />
+    <Compile Include="Models\Contribution.cs" />
+    <Compile Include="Models\UncertaintyBudget.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\ContributionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-litera.css" />
@@ -420,6 +465,12 @@
     <Content Include="Views\Instruments\Edit.cshtml" />
     <Content Include="Views\Instruments\UserView.cshtml" />
     <Content Include="Views\Instruments\Index.cshtml" />
+    <Content Include="Views\Contribution\Create.cshtml" />
+    <Content Include="Views\Contribution\Delete.cshtml" />
+    <Content Include="Views\Contribution\Details.cshtml" />
+    <Content Include="Views\Contribution\Edit.cshtml" />
+    <Content Include="Views\Contribution\Ind.cshtml" />
+    <Content Include="Views\Contribution\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -488,6 +539,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001281423409_SeedUsers1.resx">
       <DependentUpon>202001281423409_SeedUsers1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002061617426_AddManufacurerToInstrumentClass.resx">
+      <DependentUpon>202002061617426_AddManufacurerToInstrumentClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002061620413_AddManufacurerToInstrumentChangeNameClass.resx">
+      <DependentUpon>202002061620413_AddManufacurerToInstrumentChangeNameClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002071159000_NewModels_Uncertainty_Contribution_Pdfs.resx">
+      <DependentUpon>202002071159000_NewModels_Uncertainty_Contribution_Pdfs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002071201067_NewModels_Uncertainty_Contribution_Pdfs01.resx">
+      <DependentUpon>202002071201067_NewModels_Uncertainty_Contribution_Pdfs01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002071311473_NewModels_Uncertainty_Contribution_Pdfs02.resx">
+      <DependentUpon>202002071311473_NewModels_Uncertainty_Contribution_Pdfs02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002071416077_ChangePdFModel.resx">
+      <DependentUpon>202002071416077_ChangePdFModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002071420574_ContributionChange.resx">
+      <DependentUpon>202002071420574_ContributionChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002071424201_SeedDatabase.resx">
+      <DependentUpon>202002071424201_SeedDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002071500149_CompleteModel.resx">
+      <DependentUpon>202002071500149_CompleteModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

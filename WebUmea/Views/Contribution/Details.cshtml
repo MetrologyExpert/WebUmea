@@ -1,0 +1,83 @@
+﻿@model WebUmea.Models.Contribution
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contribution</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UncertaintyBudget.UbId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UncertaintyBudget.UbId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Symbol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Symbol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstimatedValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstimatedValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PdfId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PdfId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StandardUncertainty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StandardUncertainty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SensitivityCoefficient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SensitivityCoefficient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uncertainty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uncertainty)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ContributionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,4 +1,4 @@
-﻿@model WebUmea.Models.Instrument
+﻿@model WebUmea.ViewModel.ContributionViewModel
 
 @{
     ViewBag.Title = "Instrument Sheet";
@@ -7,12 +7,12 @@
 
 <h4>Instrument Sheet</h4>
 
-<div>
-  
+@*<div>
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.InstrumentName)
+            @Html.DisplayNameFor(model => model.InstrumentView)
         </dt>
 
         <dd>
@@ -36,13 +36,82 @@
         </dd>
 
     </dl>
-</div>
+</div*@>
 <p>
     @if (User.IsInRole("Administrator"))
     {
-        <button type="submit" class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new { Id = Model.InstrumentId })</button>
+        <button type="submit" class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new { Id = Model.InstrumentView})</button>
     }
 
     <button type="submit" class="btn btn-outline-primary">@Html.ActionLink("Back to List", "AdminView")</button>
 
 </p>
+
+<p>
+    @Html.ActionLink("Add New Uncertainty Contribution", "Create")
+</p>
+<table class="table">
+    @*<tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UncertaintyBudget.UbId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstimatedValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PdfId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StandardUncertainty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SensitivityCoefficient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uncertainty)
+            </th>
+            <th></th>
+        </tr>*@
+
+    @foreach (var item in Model.Contributions)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UncertaintyBudget.UbId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Symbol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimatedValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PdfId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StandardUncertainty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SensitivityCoefficient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uncertainty)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ContributionId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ContributionId })
+            </td>
+        </tr>
+    }
+
+</table>
