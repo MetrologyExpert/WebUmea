@@ -1,4 +1,5 @@
-﻿@model IEnumerable<WebUmea.Models.DemoObject>
+﻿
+@model IEnumerable<WebUmea.Models.DemoObject>
 
 @{
     ViewBag.Title = "Demo-Uncertainty";
@@ -8,9 +9,9 @@
 <h2>Demo-Uncertainty</h2>
 
 <br />
-@Html.Partial("~/Views/Instruments/_InstrumentBox.cshtml")
 
 
+@{ Html.RenderAction("InstrumentView");}
 
 <table class="table">
     <tr>
@@ -31,8 +32,6 @@
             <td>@item.ContributionSensitivityCoefficient</td>
             <td>@item.StandardUncertainty</td>
 
-            <td>@item.InstrumentId</td>
-            <td>@item.InstrumentName</td>
         </tr>
     }
 </table>

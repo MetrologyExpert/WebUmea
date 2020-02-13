@@ -26,23 +26,24 @@ namespace WebUmea.Controllers
                              ContributionEstimatedValue = co.EstimatedValue,
                              ContributionSensitivityCoefficient = co.SensitivityCoefficient,
                              StandardUncertainty = co.StandardUncertainty,
-                             InstrumentId = ins.InstrumentId,
-                             InstrumentName = ins.InstrumentName
                          };
 
             return View(queryUb);
+
         }
 
 
         public ActionResult InstrumentView()
         {
-            var queryInstrument = from ins in context.Instruments
-                                  select new DemoObject() {
-                                      InstrumentId = ins.InstrumentId,
-                                      InstrumentName = ins.InstrumentName
-                                  };
+            var instrumentViewData = context.UncertaintyBudget.Join(
+                context.Instruments, 
+                ub => ub.Instrument.InstrumentId, 
+                ins => ins.InstrumentId, 
+                (ub, ins) => new DemoInstrument { InstrumentIds = ub.InstrumentId, InstrumentNames = ins.InstrumentName }).ToList();
 
-            return PartialView("~/Views/Instruments/_InstrumentBox.cshtml", queryInstrument);
+            
+
+            return PartialView("~/Views/Instruments/_InstrumentBox.cshtml", instrumentViewData);
         }
     }
 }

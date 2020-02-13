@@ -1,13 +1,16 @@
-﻿@model IEnumerable<WebUmea.Models.DemoObject>
-
+﻿@model IEnumerable<WebUmea.Models.DemoInstrument>
 
 <table class="table">
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                @item.InstrumentId, @item.InstrumentName
+                @item.InstrumentIds
+            </td>
+            <td>
+                @item.InstrumentNames
             </td>
         </tr>
     }
 </table>
+

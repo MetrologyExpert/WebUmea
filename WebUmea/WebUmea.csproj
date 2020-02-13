@@ -309,11 +309,13 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\CreateRoleViewModel.cs" />
+    <Compile Include="Models\DemoInstrument.cs" />
     <Compile Include="Models\DemoObject.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instrument.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Pdf.cs" />
+    <Compile Include="Models\Query.cs" />
     <Compile Include="Models\RegisterUserViewModel.cs" />
     <Compile Include="Models\Contribution.cs" />
     <Compile Include="Models\UncertaintyBudget.cs" />
