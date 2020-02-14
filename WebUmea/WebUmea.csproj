@@ -305,6 +305,10 @@
     <Compile Include="Migrations\202002071500149_CompleteModel.designer.cs">
       <DependentUpon>202002071500149_CompleteModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002141447255_AddUncertaintyIdToInstrumentClass.cs" />
+    <Compile Include="Migrations\202002141447255_AddUncertaintyIdToInstrumentClass.designer.cs">
+      <DependentUpon>202002141447255_AddUncertaintyIdToInstrumentClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
@@ -473,6 +477,7 @@
     <Content Include="Views\Contribution\Ind.cshtml" />
     <Content Include="Views\Contribution\Index.cshtml" />
     <Content Include="Views\Instruments\_InstrumentBox.cshtml" />
+    <Content Include="Views\Demo\_UncertaintyBudgetView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -568,6 +573,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002071500149_CompleteModel.resx">
       <DependentUpon>202002071500149_CompleteModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002141447255_AddUncertaintyIdToInstrumentClass.resx">
+      <DependentUpon>202002141447255_AddUncertaintyIdToInstrumentClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,8 +1,26 @@
 ﻿@model IEnumerable<WebUmea.Models.DemoInstrument>
 
+
+
+
+
 <table class="table">
     @foreach (var item in Model)
     {
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Manufacturer
+            </th>
+            <th>
+                Model
+            </th>
+        </tr>
         <tr>
             <td>
                 @item.InstrumentIds
@@ -10,7 +28,20 @@
             <td>
                 @item.InstrumentNames
             </td>
+            <td>
+                @item.InsManufacturer
+            </td>
+            <td>
+                @item.InsModel
+            </td>
         </tr>
+        <tr>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>@item.InsDescription</td>
+        </tr>
+             
     }
 </table>
 

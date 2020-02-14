@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebUmea.Models;
@@ -11,9 +12,13 @@ namespace WebUmea.Controllers
     {
         private ApplicationDbContext context = new ApplicationDbContext();
 
+        // GET: Instruments/Details/5
+        
+
         // GET: Demo
         public ActionResult Index()
         {
+            
             var queryUb = from ub in context.UncertaintyBudget
                          join co in context.Contributions on ub.UbId equals co.UbId
                          join ins in context.Instruments on ub.InstrumentId equals ins.InstrumentId
@@ -28,9 +33,10 @@ namespace WebUmea.Controllers
                              StandardUncertainty = co.StandardUncertainty,
                          };
 
-            return View(queryUb);
+           
 
-        }
+            return View(queryUb);
+         }
 
 
         public ActionResult InstrumentView()
@@ -39,7 +45,13 @@ namespace WebUmea.Controllers
                 context.Instruments, 
                 ub => ub.Instrument.InstrumentId, 
                 ins => ins.InstrumentId, 
-                (ub, ins) => new DemoInstrument { InstrumentIds = ub.InstrumentId, InstrumentNames = ins.InstrumentName }).ToList();
+                (ub, ins) => new DemoInstrument {
+                    InstrumentIds = ub.InstrumentId,
+                    InstrumentNames = ins.InstrumentName,
+                    InsModel = ins.InstrumentModel,
+                    InsManufacturer = ins.Manufacturer,
+                    InsDescription = ins.Description,
+                }).ToList();
 
             
 

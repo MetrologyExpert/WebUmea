@@ -10,5 +10,11 @@ namespace WebUmea.Models
         public int InstrumentIds { get; set; }
 
         public string InstrumentNames { get; set; }
+
+        public string InsModel { get; set; }
+
+        public string InsManufacturer { get; set; }
+
+        public string InsDescription { get; set; }
     }
 }

@@ -24,5 +24,8 @@ namespace WebUmea.Models
         [AllowHtml]
         [Display(Name = "Description")]
         public string  Description { get; set; }
+
+        [Display(Name = "Uncertainty Id")]
+        public int UncertaintyId { get; set; }
     }
 }

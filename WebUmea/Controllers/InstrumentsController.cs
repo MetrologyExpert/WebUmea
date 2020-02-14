@@ -21,9 +21,23 @@ namespace WebUmea.Controllers
 
 
         // GET: Instruments
-        public ActionResult AdminView()
-        {
-            var instrumentList = db.Instruments.ToList();
+        public ActionResult AdminView() { 
+
+             //var instrumentList = db.Instruments.ToList();;
+            var instrumentList = db.UncertaintyBudget.Join(db.Instruments, ub => ub.Instrument.InstrumentId, ins => ins.InstrumentId,(ub, ins) => new DemoInstrument {
+
+                InstrumentIds= ins.InstrumentId,
+
+                InstrumentNames = ins.InstrumentName,
+
+                InsModel = ins.InstrumentModel,
+
+                InsManufacturer = ins.Manufacturer,
+
+                InsDescription = ins.Description
+
+
+            }).ToList();
 
             if (User.IsInRole("Administrator"))
             {
@@ -38,22 +52,20 @@ namespace WebUmea.Controllers
 
         // GET: Instruments/Details/5
         public ActionResult Details(int? id)
-        {
-            if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+
+                Instrument instrument = db.Instruments.Find(id);
+
+                if (instrument == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(instrument);
             }
-
-            Instrument instrument = db.Instruments.Find(id);
-
-            if (instrument == null)
-            {
-                return HttpNotFound();
-            }
-            return View(instrument);
-        }
-
-
      
         // GET: Instruments/Create
         public ActionResult Create()
@@ -77,9 +89,7 @@ namespace WebUmea.Controllers
 
             return View(instrument);
         }
-
-
-
+        
         // GET: Instruments/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -94,8 +104,7 @@ namespace WebUmea.Controllers
             }
             return View(instrument);
         }
-
-
+        
         // POST: Instruments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -111,8 +120,7 @@ namespace WebUmea.Controllers
             }
             return View(instrument);
         }
-
-
+        
         // GET: Instruments/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -127,8 +135,7 @@ namespace WebUmea.Controllers
             }
             return View(instrument);
         }
-
-
+        
         // POST: Instruments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
