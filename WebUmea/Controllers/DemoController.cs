@@ -11,51 +11,24 @@ namespace WebUmea.Controllers
     public class DemoController : Controller
     {
         private ApplicationDbContext context = new ApplicationDbContext();
-
-        // GET: Instruments/Details/5
-        
-
-        // GET: Demo
         public ActionResult Index()
         {
-            
-            var queryUb = from ub in context.UncertaintyBudget
-                         join co in context.Contributions on ub.UbId equals co.UbId
-                         join ins in context.Instruments on ub.InstrumentId equals ins.InstrumentId
-                         where (co.UbId == 10 )
-                         select new DemoObject() {
-
-                             UbId = ub.UbId,
-                             ContributionIds = co.ContributionId,
-                             ContributionName = co.Name,
-                             ContributionEstimatedValue = co.EstimatedValue,
-                             ContributionSensitivityCoefficient = co.SensitivityCoefficient,
-                             StandardUncertainty = co.StandardUncertainty,
-                         };
+            var insQuery = context.Instruments.ToList();
 
            
 
-            return View(queryUb);
-         }
+            return View("Index", insQuery);
+
+        }
 
 
         public ActionResult InstrumentView()
         {
-            var instrumentViewData = context.UncertaintyBudget.Join(
-                context.Instruments, 
-                ub => ub.Instrument.InstrumentId, 
-                ins => ins.InstrumentId, 
-                (ub, ins) => new DemoInstrument {
-                    InstrumentIds = ub.InstrumentId,
-                    InstrumentNames = ins.InstrumentName,
-                    InsModel = ins.InstrumentModel,
-                    InsManufacturer = ins.Manufacturer,
-                    InsDescription = ins.Description,
-                }).ToList();
+            var instrumentViewData = from co in context.Contributions
+                                     group co by co.UbId into groupco
+                                     select new DemoGroup<int, Contribution> { Key = groupco.Key, Values = groupco };
 
-            
-
-            return PartialView("~/Views/Instruments/_InstrumentBox.cshtml", instrumentViewData);
+            return PartialView("~/Views/Instruments/_InstrumentBox.cshtml", instrumentViewData.ToList());
         }
     }
 }

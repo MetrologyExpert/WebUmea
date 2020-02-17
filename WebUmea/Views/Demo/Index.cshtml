@@ -1,38 +1,36 @@
-﻿
-@model IEnumerable<WebUmea.Models.DemoObject>
+﻿@model IEnumerable<WebUmea.Models.Instrument>
+
 
 @{
-    ViewBag.Title = "Demo-Uncertainty";
+    ViewBag.Title = "Instrument Sheet";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Demo-Uncertainty</h2>
-
+<h2>Instrument Sheet</h2>
 <br />
+<br />
+<table class="table">
+    <tr>
+        <th>Instrument Name</th>
+        <th>Instrument Manufacturer</th>
+        <th>Instrument Model</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.InstrumentName</td>
+            <td>@item.Manufacturer</td>
+            <td>@item.InstrumentModel</td>
+
+        </tr> 
+    }
+
+</table>
 
 
 @{ Html.RenderAction("InstrumentView");}
 
-<table class="table">
-    <tr>
-        <th>Uncertainty Id</th>
-        <th>Contribution Id</th>
-        <th>Name</th>
-        <th>EstimatedValue</th>
-        <th>Sensitivity Coefficient</th>
-        <th>Standard Uncertainty</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.UbId</td>
-            <td>@item.ContributionIds</td>
-            <td>@item.ContributionName</td>
-            <td>@item.ContributionEstimatedValue</td>
-            <td>@item.ContributionSensitivityCoefficient</td>
-            <td>@item.StandardUncertainty</td>
 
-        </tr>
-    }
-</table>
+
 

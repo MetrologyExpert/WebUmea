@@ -313,6 +313,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\CreateRoleViewModel.cs" />
+    <Compile Include="Models\DemoContribution.cs" />
+    <Compile Include="Models\DemoGroup.cs" />
     <Compile Include="Models\DemoInstrument.cs" />
     <Compile Include="Models\DemoObject.cs" />
     <Compile Include="Models\IdentityModels.cs" />

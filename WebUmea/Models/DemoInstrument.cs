@@ -16,5 +16,13 @@ namespace WebUmea.Models
         public string InsManufacturer { get; set; }
 
         public string InsDescription { get; set; }
+
+        public int UbIds { get; set; }
+
+        public int CoId { get; set; }
+
+        public double EstdValue { get; set; }
+
+        public double StdUncertainty { get; set; }
     }
 }

@@ -1,47 +1,32 @@
-﻿@model IEnumerable<WebUmea.Models.DemoInstrument>
-
-
-
-
+﻿@model List<WebUmea.Models.DemoGroup<int,WebUmea.Models.Contribution>>
 
 <table class="table">
-    @foreach (var item in Model)
+    @*<thead><tr><th>Key</th><th>Title</th><th>Uncertainty Constributions</th></tr></thead>*@
+    <tbody>
+        @foreach (var group in Model)
+    {
+        <tr><th>Uncertainty Budget Id: @group.Key</th></tr>
+        <tr>
+            <th>ContributionId</th>
+            <th>Name</th>
+            <th>EstimatedValue</th>
+            <th>PdfId</th>
+            <th>SensitivityCoefficient</th>
+            <th>StandardUncertainty</th>
+        </tr>
+    foreach (var item in group.Values)
     {
         <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Manufacturer
-            </th>
-            <th>
-                Model
-            </th>
+            <td>@item.ContributionId</td>
+            <td>@item.Name</td>
+            <td>@item.EstimatedValue</td>
+            <td>@item.PdfId</td>
+            <td>@item.SensitivityCoefficient</td>
+            <td>@item.StandardUncertainty</td>
         </tr>
-        <tr>
-            <td>
-                @item.InstrumentIds
-            </td>
-            <td>
-                @item.InstrumentNames
-            </td>
-            <td>
-                @item.InsManufacturer
-            </td>
-            <td>
-                @item.InsModel
-            </td>
-        </tr>
-        <tr>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>@item.InsDescription</td>
-        </tr>
-             
-    }
+}
+}
+        @*</tbody>*@
 </table>
+
 
