@@ -1,5 +1,5 @@
 ﻿@using System.Text.RegularExpressions
-@model IEnumerable<WebUmea.Models.DemoInstrument>
+@model IEnumerable<WebUmea.Models.Instrument>
 
 @{
     ViewBag.Title = "Instrument List";
@@ -15,11 +15,8 @@
 </p>
 <br />
 <table class="table">
-    @*<tr>
-        <th>
-            @Html.DisplayNameFor(model => model.)
-        </th>
-        <th>
+    <tr>
+         <th>
             @Html.DisplayNameFor(model => model.InstrumentName)
         </th>
         <th>
@@ -32,36 +29,36 @@
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @*Header Space
+            Header Space
         </th>
-    </tr>*@
+    </tr>
 
     @foreach (var item in Model)
     {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.InstrumentIds)
+            @Html.DisplayFor(modelItem => item.InstrumentName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.InstrumentNames)
+            @Html.DisplayFor(modelItem => item.Manufacturer)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.InsManufacturer)
+            @Html.DisplayFor(modelItem => item.InstrumentModel)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.InsModel)
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
             @*@Regex.Replace(item.Description,"@< (.| n) *?>", string.Empty)*@
-            @Html.Raw(item.InsDescription)
+            @Html.Raw(item.Description)
             @*@Html.DisplayFor(modelItem => item.Description)*@
         </td>
 
         <td>
-            @*<button class="btn btn-outline-primary"> @Html.ActionLink("Page View", "Details", new { id = item.InstrumentIds })</button>*@
+            <button class="btn btn-outline-primary"> @Html.ActionLink("Page View", "Details", new { id = item.InstrumentId })</button>
             <button class="btn btn-outline-primary"> @Html.ActionLink("Page View","Index","Demo")</button>
-                <button class="btn btn-outline-primary"> @Html.ActionLink("Edit Page", "Edit", new { id = item.InstrumentIds })</button>
-                <button class="btn btn-outline-primary"> @Html.ActionLink("Delete Page", "Delete", new { id = item.InstrumentIds })</button>
+                <button class="btn btn-outline-primary"> @Html.ActionLink("Edit Page", "Edit", new { id = item.InstrumentId })</button>
+                <button class="btn btn-outline-primary"> @Html.ActionLink("Delete Page", "Delete", new { id = item.InstrumentId })</button>
         </td>
     </tr>
       

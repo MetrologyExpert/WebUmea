@@ -2,10 +2,17 @@
 
 <table class="table">
     @*<thead><tr><th>Key</th><th>Title</th><th>Uncertainty Constributions</th></tr></thead>*@
-    <tbody>
-        @foreach (var group in Model)
+    
+   @foreach (var group in Model)
     {
-        <tr><th>Uncertainty Budget Id: @group.Key</th></tr>
+        <tr>
+            <th>
+            Uncertainty Budget Id: @group.Key
+            </th>
+            <th>
+                <button type="submit" class="btn btn-danger">@Html.ActionLink("Delete", "Delete", new { id = group.Key })</button>
+            </th>
+        </tr>
         <tr>
             <th>ContributionId</th>
             <th>Name</th>
@@ -13,9 +20,10 @@
             <th>PdfId</th>
             <th>SensitivityCoefficient</th>
             <th>StandardUncertainty</th>
+            <th>Operation</th>
         </tr>
-    foreach (var item in group.Values)
-    {
+            foreach (var item in group.Values)
+            {
         <tr>
             <td>@item.ContributionId</td>
             <td>@item.Name</td>
@@ -23,10 +31,15 @@
             <td>@item.PdfId</td>
             <td>@item.SensitivityCoefficient</td>
             <td>@item.StandardUncertainty</td>
+            <td>
+                
+                 @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId }) |
+                 @Html.ActionLink("Delete", "Delete", new { id = item.ContributionId })
+            </td>
         </tr>
-}
-}
-        @*</tbody>*@
+
+            }
+    }
 </table>
 
 

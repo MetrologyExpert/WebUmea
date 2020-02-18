@@ -45,10 +45,10 @@
     </dl>
 </div>
 
-
+@{ Html.RenderAction("InstrumentView");}
 
 
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.InstrumentId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "AdminView")
 </p>

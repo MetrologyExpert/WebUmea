@@ -1,0 +1,44 @@
+﻿@model WebUmea.Models.Instrument
+
+
+@{
+    ViewBag.Title = "Instrument Sheet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Instrument Sheet</h2>
+</br>
+
+<br />
+<table class="table">
+    <tr>
+        <th>Instrument Id</th>
+        <th>Instrument Name</th>
+        <th>Instrument Manufacturer</th>
+        <th>Instrument Model</th>
+
+    </tr>
+    <tr>
+        <td> @Html.DisplayFor(model => model.InstrumentId)</td>
+        <td> @Html.DisplayFor(model => model.InstrumentName)</td>
+        <td> @Html.DisplayFor(model => model.Manufacturer)</td>
+        <td> @Html.DisplayFor(model => model.InstrumentModel)</td>
+    </tr>
+</table>
+<br />
+<br />
+<table>
+    <tr><th>@Html.DisplayNameFor(model => model.Description)</th></tr>
+    <tr><td>@Html.DisplayFor(model => model.Description)</td> </tr>
+</table>
+<br />
+<br />
+<button class="btn btn-outline-primary"> @Html.ActionLink("Add New UncertaintyBudget", "AddNewUncertainty", new { id = Model.InstrumentId })</button>
+<br />
+<br />
+
+@{ Html.RenderAction("InstrumentView");}
+
+
+
+

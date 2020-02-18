@@ -1,36 +1,29 @@
 ﻿@model IEnumerable<WebUmea.Models.Instrument>
-
-
 @{
-    ViewBag.Title = "Instrument Sheet";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+</br>
+<h2>Instrument List</h2>
 
-<h2>Instrument Sheet</h2>
-<br />
-<br />
-<table class="table">
+</br>
+<button type="submit" class="btn btn-outline-primary"> @Html.ActionLink("Add New Instrument", "CreateInstrument")</button>
+</br>
+</br>
+<table class="table table-hover">
     <tr>
+        <th>Instrument Id</th>
         <th>Instrument Name</th>
         <th>Instrument Manufacturer</th>
         <th>Instrument Model</th>
     </tr>
-
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.InstrumentName</td>
-            <td>@item.Manufacturer</td>
-            <td>@item.InstrumentModel</td>
-
-        </tr> 
+            <td>@Html.ActionLink(item.InstrumentId.ToString(), "PageView", new { htmlAttributes = new { @class = "success", id = item.InstrumentId } })</td>
+            <td>@Html.ActionLink(item.InstrumentName.ToString(), "PageView", new { id = item.InstrumentId })</td>
+            <td>@Html.ActionLink(item.Manufacturer.ToString(), "PageView", new { id = item.InstrumentId })</td>
+            <td>@Html.ActionLink(item.InstrumentModel.ToString(), "PageView", new { id = item.InstrumentId })</td>
+        </tr>
     }
-
 </table>
-
-
-@{ Html.RenderAction("InstrumentView");}
-
-
-
-

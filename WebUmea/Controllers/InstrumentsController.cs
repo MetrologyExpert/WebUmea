@@ -21,23 +21,24 @@ namespace WebUmea.Controllers
 
 
         // GET: Instruments
-        public ActionResult AdminView() { 
+        public ActionResult AdminView() {
 
-             //var instrumentList = db.Instruments.ToList();;
-            var instrumentList = db.UncertaintyBudget.Join(db.Instruments, ub => ub.Instrument.InstrumentId, ins => ins.InstrumentId,(ub, ins) => new DemoInstrument {
+            var instrumentList = db.Instruments.ToList();
 
-                InstrumentIds= ins.InstrumentId,
+            //var instrumentList = db.UncertaintyBudget.Join(db.Instruments, ub => ub.Instrument.InstrumentId, ins => ins.InstrumentId,(ub, ins) => new DemoInstrument {
 
-                InstrumentNames = ins.InstrumentName,
+            //    InstrumentIds= ins.InstrumentId,
 
-                InsModel = ins.InstrumentModel,
+            //    InstrumentNames = ins.InstrumentName,
 
-                InsManufacturer = ins.Manufacturer,
+            //    InsModel = ins.InstrumentModel,
 
-                InsDescription = ins.Description
+            //    InsManufacturer = ins.Manufacturer,
+
+            //    InsDescription = ins.Description
 
 
-            }).ToList();
+            //}).ToList();
 
             if (User.IsInRole("Administrator"))
             {
@@ -154,6 +155,15 @@ namespace WebUmea.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult InstrumentView()
+        {
+            var instrumentViewData = from co in db.Contributions
+                                     group co by co.UbId into groupco
+                                     select new DemoGroup<int, Contribution> { Key = groupco.Key, Values = groupco };
+
+            return PartialView("~/Views/Instruments/_InstrumentBox.cshtml", instrumentViewData.ToList());
         }
     }
 }

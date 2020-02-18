@@ -457,7 +457,7 @@
     <Content Include="Views\InstMenu\New.cshtml" />
     <Content Include="Views\InstMenu\New1.cshtml" />
     <Content Include="Views\InstMenu\PageView.cshtml" />
-    <Content Include="Views\Demo\Index.cshtml" />
+    <Content Include="Views\Demo\PageView.cshtml" />
     <Content Include="Views\InstMenu\Error.cshtml" />
     <Content Include="Summernote\dist\font\summernote.eot" />
     <Content Include="Summernote\dist\font\summernote.ttf" />
@@ -480,6 +480,9 @@
     <Content Include="Views\Contribution\Index.cshtml" />
     <Content Include="Views\Instruments\_InstrumentBox.cshtml" />
     <Content Include="Views\Demo\_UncertaintyBudgetView.cshtml" />
+    <Content Include="Views\Demo\Index.cshtml" />
+    <Content Include="Views\Demo\CreateInstrument.cshtml" />
+    <Content Include="Views\Demo\AddNewUncertainty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
