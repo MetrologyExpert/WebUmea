@@ -15,7 +15,7 @@ namespace WebUmea.Controllers
 {
 
 
-    public class InstrumentsController : Controller
+    public class InstrumentsControllerX : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
