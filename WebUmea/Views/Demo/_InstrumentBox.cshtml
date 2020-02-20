@@ -29,13 +29,13 @@
             <td>@item.ContributionId</td>
             <td>@item.Name</td>
             <td>@item.EstimatedValue</td>
-            <td>@item.PdfId</td>
+            <td>@item.pdfId</td>
             <td>@item.SensitivityCoefficient</td>
             <td>@item.StandardUncertainty</td>
             <td>
-                
-                 @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId }) |
-                 @Html.ActionLink("Delete", "Delete", new { id = item.ContributionId })
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ContributionId })
             </td>
         </tr>
 

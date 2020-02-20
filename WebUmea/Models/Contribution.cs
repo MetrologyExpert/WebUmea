@@ -16,14 +16,12 @@ namespace WebUmea.Models
         public double EstimatedValue { get; set; }
 
         //[ForeignKey("PdfId")]
-        public int PdfId { get; set; }
+        public int pdfId { get; set; }
         public double StandardUncertainty { get; set; }
         public double SensitivityCoefficient { get; set; }
         public string Uncertainty { get; set; }
 
-        //Navigation Properties
-
-        public ICollection<Pdf> Pdfs { get; set; }
+        //Navigation Properties   
 
         //[ForeignKey("UbId")]
         public int UbId { get; set; }

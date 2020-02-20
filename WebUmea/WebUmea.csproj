@@ -308,6 +308,74 @@
     <Compile Include="Migrations\202002141447255_AddUncertaintyIdToInstrumentClass.designer.cs">
       <DependentUpon>202002141447255_AddUncertaintyIdToInstrumentClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002201151238_ChangePdf.cs" />
+    <Compile Include="Migrations\202002201151238_ChangePdf.designer.cs">
+      <DependentUpon>202002201151238_ChangePdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201153549_RemoveNavigationPdfFromContribution.cs" />
+    <Compile Include="Migrations\202002201153549_RemoveNavigationPdfFromContribution.designer.cs">
+      <DependentUpon>202002201153549_RemoveNavigationPdfFromContribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201310062_BindPdfToContribution.cs" />
+    <Compile Include="Migrations\202002201310062_BindPdfToContribution.designer.cs">
+      <DependentUpon>202002201310062_BindPdfToContribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201312262_BindPdfToContributionA.cs" />
+    <Compile Include="Migrations\202002201312262_BindPdfToContributionA.designer.cs">
+      <DependentUpon>202002201312262_BindPdfToContributionA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201314290_BindPdfToContributionA1.cs" />
+    <Compile Include="Migrations\202002201314290_BindPdfToContributionA1.designer.cs">
+      <DependentUpon>202002201314290_BindPdfToContributionA1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201316446_BindPdfToContributionC.cs" />
+    <Compile Include="Migrations\202002201316446_BindPdfToContributionC.designer.cs">
+      <DependentUpon>202002201316446_BindPdfToContributionC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201336459_OnceAgainPdf.cs" />
+    <Compile Include="Migrations\202002201336459_OnceAgainPdf.designer.cs">
+      <DependentUpon>202002201336459_OnceAgainPdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201337406_AgainPdf.cs" />
+    <Compile Include="Migrations\202002201337406_AgainPdf.designer.cs">
+      <DependentUpon>202002201337406_AgainPdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201351565_empty.cs" />
+    <Compile Include="Migrations\202002201351565_empty.designer.cs">
+      <DependentUpon>202002201351565_empty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201356112_newpdfs0.cs" />
+    <Compile Include="Migrations\202002201356112_newpdfs0.designer.cs">
+      <DependentUpon>202002201356112_newpdfs0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201357560_newpdfs1.cs" />
+    <Compile Include="Migrations\202002201357560_newpdfs1.designer.cs">
+      <DependentUpon>202002201357560_newpdfs1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201401343_newpdfs3.cs" />
+    <Compile Include="Migrations\202002201401343_newpdfs3.designer.cs">
+      <DependentUpon>202002201401343_newpdfs3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201425186_AddProbabilityDistribution.cs" />
+    <Compile Include="Migrations\202002201425186_AddProbabilityDistribution.designer.cs">
+      <DependentUpon>202002201425186_AddProbabilityDistribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201444054_AddProbabilityDistribution0.cs" />
+    <Compile Include="Migrations\202002201444054_AddProbabilityDistribution0.designer.cs">
+      <DependentUpon>202002201444054_AddProbabilityDistribution0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201448314_RemoveProbabilityDistribution1.cs" />
+    <Compile Include="Migrations\202002201448314_RemoveProbabilityDistribution1.designer.cs">
+      <DependentUpon>202002201448314_RemoveProbabilityDistribution1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201453410_emptybox.cs" />
+    <Compile Include="Migrations\202002201453410_emptybox.designer.cs">
+      <DependentUpon>202002201453410_emptybox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201454378_RemoveProbabilityDistribution2.cs" />
+    <Compile Include="Migrations\202002201454378_RemoveProbabilityDistribution2.designer.cs">
+      <DependentUpon>202002201454378_RemoveProbabilityDistribution2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
@@ -319,7 +387,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instrument.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Pdf.cs" />
     <Compile Include="Models\Query.cs" />
     <Compile Include="Models\RegisterUserViewModel.cs" />
     <Compile Include="Models\Contribution.cs" />
@@ -577,6 +644,57 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002141447255_AddUncertaintyIdToInstrumentClass.resx">
       <DependentUpon>202002141447255_AddUncertaintyIdToInstrumentClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201151238_ChangePdf.resx">
+      <DependentUpon>202002201151238_ChangePdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201153549_RemoveNavigationPdfFromContribution.resx">
+      <DependentUpon>202002201153549_RemoveNavigationPdfFromContribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201310062_BindPdfToContribution.resx">
+      <DependentUpon>202002201310062_BindPdfToContribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201312262_BindPdfToContributionA.resx">
+      <DependentUpon>202002201312262_BindPdfToContributionA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201314290_BindPdfToContributionA1.resx">
+      <DependentUpon>202002201314290_BindPdfToContributionA1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201316446_BindPdfToContributionC.resx">
+      <DependentUpon>202002201316446_BindPdfToContributionC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201336459_OnceAgainPdf.resx">
+      <DependentUpon>202002201336459_OnceAgainPdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201337406_AgainPdf.resx">
+      <DependentUpon>202002201337406_AgainPdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201351565_empty.resx">
+      <DependentUpon>202002201351565_empty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201356112_newpdfs0.resx">
+      <DependentUpon>202002201356112_newpdfs0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201357560_newpdfs1.resx">
+      <DependentUpon>202002201357560_newpdfs1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201401343_newpdfs3.resx">
+      <DependentUpon>202002201401343_newpdfs3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201425186_AddProbabilityDistribution.resx">
+      <DependentUpon>202002201425186_AddProbabilityDistribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201444054_AddProbabilityDistribution0.resx">
+      <DependentUpon>202002201444054_AddProbabilityDistribution0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201448314_RemoveProbabilityDistribution1.resx">
+      <DependentUpon>202002201448314_RemoveProbabilityDistribution1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201453410_emptybox.resx">
+      <DependentUpon>202002201453410_emptybox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201454378_RemoveProbabilityDistribution2.resx">
+      <DependentUpon>202002201454378_RemoveProbabilityDistribution2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

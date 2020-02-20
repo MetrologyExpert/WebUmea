@@ -11,8 +11,6 @@ namespace WebUmea.ViewModel
 
         public List<Instrument> InstrumentView { get; set; }
 
-        public List<Pdf> PdfView { get; set; }
-
         public List<Contribution> Contributions { get; set; }
     }
 }
