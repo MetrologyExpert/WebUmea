@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WebUmea.ViewModel.ubTable>
+
+@{
+    ViewBag.Title = "UncertaintyTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UncertaintyTable</h2>
+
+<table>
+    <tr>
+        <th>Uncertainty Id</th>
+        <th>Instrument Id</th>
+        <th>Instrument Name</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.InstrumentId/th>
+            <th>@item.InstrumentName</th>
+            <th>@item.UbId</th>
+        </tr>
+    }
+</table>

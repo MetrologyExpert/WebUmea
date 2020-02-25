@@ -16,15 +16,19 @@ namespace WebUmea.Models
         public double EstimatedValue { get; set; }
 
         //[ForeignKey("PdfId")]
-        public int pdfId { get; set; }
+       
         public double StandardUncertainty { get; set; }
         public double SensitivityCoefficient { get; set; }
         public string Uncertainty { get; set; }
 
-        //Navigation Properties   
+        //Navigation Properties
+        public int pdfId { get; set; }
+     
 
         //[ForeignKey("UbId")]
         public int UbId { get; set; }
         public UncertaintyBudget UncertaintyBudget { get; set; }
+        
+
     }
 }

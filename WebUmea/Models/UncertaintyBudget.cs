@@ -7,25 +7,13 @@ using System.Web;
 namespace WebUmea.Models
 {
     public class UncertaintyBudget
-    {
-        [Key]
+    {   [Key]
         public int UbId { get; set; }
 
-        //Navigation Properties
-
-        //[ForeignKey("AuthorId")]
-        public int AuthorId { get; set; }
-        public Author Author { get; set; }
-
-        //[ForeignKey("InstrumentId")]
         public int InstrumentId { get; set; }
-        public Instrument Instrument { get; set; }
 
-        //[ForeignKey("UserId")]
+        public int AuthorId { get; set; }
+
         public int UserId { get; set; }
-        public User User { get; set; }
-
-        public ICollection<Contribution> Contributions { get; set; }
-
     }
 }

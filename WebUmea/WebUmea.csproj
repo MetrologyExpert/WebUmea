@@ -191,190 +191,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ContributionsController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\InstrumentsControllerX.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911251526269_InitialModel.cs" />
-    <Compile Include="Migrations\201911251526269_InitialModel.designer.cs">
-      <DependentUpon>201911251526269_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202002250958420_NewBeginning.cs" />
+    <Compile Include="Migrations\202002250958420_NewBeginning.designer.cs">
+      <DependentUpon>202002250958420_NewBeginning.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911251557006_ChangeNameOfInstumentViewModelsToInstrument.cs" />
-    <Compile Include="Migrations\201911251557006_ChangeNameOfInstumentViewModelsToInstrument.designer.cs">
-      <DependentUpon>201911251557006_ChangeNameOfInstumentViewModelsToInstrument.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911251600319_AddDataToInstrument.cs" />
-    <Compile Include="Migrations\201911251600319_AddDataToInstrument.designer.cs">
-      <DependentUpon>201911251600319_AddDataToInstrument.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912171256545_AddNewFieldsToRegister.cs" />
-    <Compile Include="Migrations\201912171256545_AddNewFieldsToRegister.designer.cs">
-      <DependentUpon>201912171256545_AddNewFieldsToRegister.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912171302529_AddNewFieldsToRegister0.cs" />
-    <Compile Include="Migrations\201912171302529_AddNewFieldsToRegister0.designer.cs">
-      <DependentUpon>201912171302529_AddNewFieldsToRegister0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912171308439_AddNewFieldsToRegister1.cs" />
-    <Compile Include="Migrations\201912171308439_AddNewFieldsToRegister1.designer.cs">
-      <DependentUpon>201912171308439_AddNewFieldsToRegister1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912171344352_AddUsers.cs" />
-    <Compile Include="Migrations\201912171344352_AddUsers.designer.cs">
-      <DependentUpon>201912171344352_AddUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912201010441_SeedUsers.cs" />
-    <Compile Include="Migrations\201912201010441_SeedUsers.designer.cs">
-      <DependentUpon>201912201010441_SeedUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912201228000_newInstrumenttable.cs" />
-    <Compile Include="Migrations\201912201228000_newInstrumenttable.designer.cs">
-      <DependentUpon>201912201228000_newInstrumenttable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912201544178_AddUser.cs" />
-    <Compile Include="Migrations\201912201544178_AddUser.designer.cs">
-      <DependentUpon>201912201544178_AddUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912201609016_AddUserProfile.cs" />
-    <Compile Include="Migrations\201912201609016_AddUserProfile.designer.cs">
-      <DependentUpon>201912201609016_AddUserProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001271248513_AddUserProfileTable.cs" />
-    <Compile Include="Migrations\202001271248513_AddUserProfileTable.designer.cs">
-      <DependentUpon>202001271248513_AddUserProfileTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001271303124_AddUserProfileTableAgain.cs" />
-    <Compile Include="Migrations\202001271303124_AddUserProfileTableAgain.designer.cs">
-      <DependentUpon>202001271303124_AddUserProfileTableAgain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001271338069_RemoveUserProfileTable.cs" />
-    <Compile Include="Migrations\202001271338069_RemoveUserProfileTable.designer.cs">
-      <DependentUpon>202001271338069_RemoveUserProfileTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001271359194_Remigrate.cs" />
-    <Compile Include="Migrations\202001271359194_Remigrate.designer.cs">
-      <DependentUpon>202001271359194_Remigrate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001271402236_removeUserId.cs" />
-    <Compile Include="Migrations\202001271402236_removeUserId.designer.cs">
-      <DependentUpon>202001271402236_removeUserId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001281423409_SeedUsers1.cs" />
-    <Compile Include="Migrations\202001281423409_SeedUsers1.designer.cs">
-      <DependentUpon>202001281423409_SeedUsers1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002061617426_AddManufacurerToInstrumentClass.cs" />
-    <Compile Include="Migrations\202002061617426_AddManufacurerToInstrumentClass.designer.cs">
-      <DependentUpon>202002061617426_AddManufacurerToInstrumentClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002061620413_AddManufacurerToInstrumentChangeNameClass.cs" />
-    <Compile Include="Migrations\202002061620413_AddManufacurerToInstrumentChangeNameClass.designer.cs">
-      <DependentUpon>202002061620413_AddManufacurerToInstrumentChangeNameClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071159000_NewModels_Uncertainty_Contribution_Pdfs.cs" />
-    <Compile Include="Migrations\202002071159000_NewModels_Uncertainty_Contribution_Pdfs.designer.cs">
-      <DependentUpon>202002071159000_NewModels_Uncertainty_Contribution_Pdfs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071201067_NewModels_Uncertainty_Contribution_Pdfs01.cs" />
-    <Compile Include="Migrations\202002071201067_NewModels_Uncertainty_Contribution_Pdfs01.designer.cs">
-      <DependentUpon>202002071201067_NewModels_Uncertainty_Contribution_Pdfs01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071311473_NewModels_Uncertainty_Contribution_Pdfs02.cs" />
-    <Compile Include="Migrations\202002071311473_NewModels_Uncertainty_Contribution_Pdfs02.designer.cs">
-      <DependentUpon>202002071311473_NewModels_Uncertainty_Contribution_Pdfs02.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071416077_ChangePdFModel.cs" />
-    <Compile Include="Migrations\202002071416077_ChangePdFModel.designer.cs">
-      <DependentUpon>202002071416077_ChangePdFModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071420574_ContributionChange.cs" />
-    <Compile Include="Migrations\202002071420574_ContributionChange.designer.cs">
-      <DependentUpon>202002071420574_ContributionChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071424201_SeedDatabase.cs" />
-    <Compile Include="Migrations\202002071424201_SeedDatabase.designer.cs">
-      <DependentUpon>202002071424201_SeedDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071500149_CompleteModel.cs" />
-    <Compile Include="Migrations\202002071500149_CompleteModel.designer.cs">
-      <DependentUpon>202002071500149_CompleteModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002141447255_AddUncertaintyIdToInstrumentClass.cs" />
-    <Compile Include="Migrations\202002141447255_AddUncertaintyIdToInstrumentClass.designer.cs">
-      <DependentUpon>202002141447255_AddUncertaintyIdToInstrumentClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201151238_ChangePdf.cs" />
-    <Compile Include="Migrations\202002201151238_ChangePdf.designer.cs">
-      <DependentUpon>202002201151238_ChangePdf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201153549_RemoveNavigationPdfFromContribution.cs" />
-    <Compile Include="Migrations\202002201153549_RemoveNavigationPdfFromContribution.designer.cs">
-      <DependentUpon>202002201153549_RemoveNavigationPdfFromContribution.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201310062_BindPdfToContribution.cs" />
-    <Compile Include="Migrations\202002201310062_BindPdfToContribution.designer.cs">
-      <DependentUpon>202002201310062_BindPdfToContribution.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201312262_BindPdfToContributionA.cs" />
-    <Compile Include="Migrations\202002201312262_BindPdfToContributionA.designer.cs">
-      <DependentUpon>202002201312262_BindPdfToContributionA.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201314290_BindPdfToContributionA1.cs" />
-    <Compile Include="Migrations\202002201314290_BindPdfToContributionA1.designer.cs">
-      <DependentUpon>202002201314290_BindPdfToContributionA1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201316446_BindPdfToContributionC.cs" />
-    <Compile Include="Migrations\202002201316446_BindPdfToContributionC.designer.cs">
-      <DependentUpon>202002201316446_BindPdfToContributionC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201336459_OnceAgainPdf.cs" />
-    <Compile Include="Migrations\202002201336459_OnceAgainPdf.designer.cs">
-      <DependentUpon>202002201336459_OnceAgainPdf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201337406_AgainPdf.cs" />
-    <Compile Include="Migrations\202002201337406_AgainPdf.designer.cs">
-      <DependentUpon>202002201337406_AgainPdf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201351565_empty.cs" />
-    <Compile Include="Migrations\202002201351565_empty.designer.cs">
-      <DependentUpon>202002201351565_empty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201356112_newpdfs0.cs" />
-    <Compile Include="Migrations\202002201356112_newpdfs0.designer.cs">
-      <DependentUpon>202002201356112_newpdfs0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201357560_newpdfs1.cs" />
-    <Compile Include="Migrations\202002201357560_newpdfs1.designer.cs">
-      <DependentUpon>202002201357560_newpdfs1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201401343_newpdfs3.cs" />
-    <Compile Include="Migrations\202002201401343_newpdfs3.designer.cs">
-      <DependentUpon>202002201401343_newpdfs3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201425186_AddProbabilityDistribution.cs" />
-    <Compile Include="Migrations\202002201425186_AddProbabilityDistribution.designer.cs">
-      <DependentUpon>202002201425186_AddProbabilityDistribution.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201444054_AddProbabilityDistribution0.cs" />
-    <Compile Include="Migrations\202002201444054_AddProbabilityDistribution0.designer.cs">
-      <DependentUpon>202002201444054_AddProbabilityDistribution0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201448314_RemoveProbabilityDistribution1.cs" />
-    <Compile Include="Migrations\202002201448314_RemoveProbabilityDistribution1.designer.cs">
-      <DependentUpon>202002201448314_RemoveProbabilityDistribution1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201453410_emptybox.cs" />
-    <Compile Include="Migrations\202002201453410_emptybox.designer.cs">
-      <DependentUpon>202002201453410_emptybox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201454378_RemoveProbabilityDistribution2.cs" />
-    <Compile Include="Migrations\202002201454378_RemoveProbabilityDistribution2.designer.cs">
-      <DependentUpon>202002201454378_RemoveProbabilityDistribution2.cs</DependentUpon>
+    <Compile Include="Migrations\202002251002521_AddUncertaintyBudget.cs" />
+    <Compile Include="Migrations\202002251002521_AddUncertaintyBudget.designer.cs">
+      <DependentUpon>202002251002521_AddUncertaintyBudget.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -387,6 +217,8 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instrument.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NewContribution.cs" />
+    <Compile Include="Models\Pdf.cs" />
     <Compile Include="Models\Query.cs" />
     <Compile Include="Models\RegisterUserViewModel.cs" />
     <Compile Include="Models\Contribution.cs" />
@@ -394,7 +226,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModel\ContributionViewModel.cs" />
+    <Compile Include="ViewModel\ubTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-litera.css" />
@@ -520,32 +352,19 @@
     <Content Include="Views\Main\Home.cshtml" />
     <Content Include="Views\Main\About.cshtml" />
     <Content Include="Views\Main\Contactus.cshtml" />
-    <Content Include="Views\Demo\PageView.cshtml" />
     <Content Include="Summernote\dist\font\summernote.eot" />
     <Content Include="Summernote\dist\font\summernote.ttf" />
     <Content Include="Summernote\dist\font\summernote.woff" />
     <Content Include="Views\Account\ProfileView.cshtml" />
-    <Content Include="Views\Instruments\AdminView.cshtml" />
-    <Content Include="Views\Instruments\Create.cshtml" />
-    <Content Include="Views\Instruments\Delete.cshtml" />
-    <Content Include="Views\Instruments\Details.cshtml" />
-    <Content Include="Views\Instruments\Edit - Copy.cshtml" />
-    <Content Include="Views\Instruments\Edit.cshtml" />
-    <Content Include="Views\Instruments\UserView.cshtml" />
-    <Content Include="Views\Instruments\Index.cshtml" />
-    <Content Include="Views\Instruments\_InstrumentBox.cshtml" />
-    <Content Include="Views\Demo\_UncertaintyBudgetView.cshtml" />
-    <Content Include="Views\Demo\Index.cshtml" />
-    <Content Include="Views\Demo\CreateInstrument.cshtml" />
     <Content Include="Views\Demo\AddNewUncertainty.cshtml" />
-    <Content Include="Views\Contributions\Create.cshtml" />
-    <Content Include="Views\Contributions\Delete.cshtml" />
-    <Content Include="Views\Contributions\Details.cshtml" />
-    <Content Include="Views\Contributions\Edit.cshtml" />
-    <Content Include="Views\Contributions\Index.cshtml" />
-    <Content Include="Views\Demo\Edit.cshtml" />
-    <Content Include="Views\Demo\_InstrumentBox.cshtml" />
+    <Content Include="Views\Demo\CreateInstrument.cshtml" />
     <Content Include="Views\Demo\Delete.cshtml" />
+    <Content Include="Views\Demo\Edit.cshtml" />
+    <Content Include="Views\Demo\Index.cshtml" />
+    <Content Include="Views\Demo\PageView.cshtml" />
+    <Content Include="Views\Demo\UncertaintyTable.cshtml" />
+    <Content Include="Views\Demo\_InstrumentBox.cshtml" />
+    <Content Include="Views\Demo\_UncertaintyBudgetView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -564,137 +383,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911251526269_InitialModel.resx">
-      <DependentUpon>201911251526269_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002250958420_NewBeginning.resx">
+      <DependentUpon>202002250958420_NewBeginning.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911251557006_ChangeNameOfInstumentViewModelsToInstrument.resx">
-      <DependentUpon>201911251557006_ChangeNameOfInstumentViewModelsToInstrument.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911251600319_AddDataToInstrument.resx">
-      <DependentUpon>201911251600319_AddDataToInstrument.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912171256545_AddNewFieldsToRegister.resx">
-      <DependentUpon>201912171256545_AddNewFieldsToRegister.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912171302529_AddNewFieldsToRegister0.resx">
-      <DependentUpon>201912171302529_AddNewFieldsToRegister0.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912171308439_AddNewFieldsToRegister1.resx">
-      <DependentUpon>201912171308439_AddNewFieldsToRegister1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912171344352_AddUsers.resx">
-      <DependentUpon>201912171344352_AddUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912201010441_SeedUsers.resx">
-      <DependentUpon>201912201010441_SeedUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912201228000_newInstrumenttable.resx">
-      <DependentUpon>201912201228000_newInstrumenttable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912201544178_AddUser.resx">
-      <DependentUpon>201912201544178_AddUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912201609016_AddUserProfile.resx">
-      <DependentUpon>201912201609016_AddUserProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001271248513_AddUserProfileTable.resx">
-      <DependentUpon>202001271248513_AddUserProfileTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001271303124_AddUserProfileTableAgain.resx">
-      <DependentUpon>202001271303124_AddUserProfileTableAgain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001271338069_RemoveUserProfileTable.resx">
-      <DependentUpon>202001271338069_RemoveUserProfileTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001271359194_Remigrate.resx">
-      <DependentUpon>202001271359194_Remigrate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001271402236_removeUserId.resx">
-      <DependentUpon>202001271402236_removeUserId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001281423409_SeedUsers1.resx">
-      <DependentUpon>202001281423409_SeedUsers1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002061617426_AddManufacurerToInstrumentClass.resx">
-      <DependentUpon>202002061617426_AddManufacurerToInstrumentClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002061620413_AddManufacurerToInstrumentChangeNameClass.resx">
-      <DependentUpon>202002061620413_AddManufacurerToInstrumentChangeNameClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071159000_NewModels_Uncertainty_Contribution_Pdfs.resx">
-      <DependentUpon>202002071159000_NewModels_Uncertainty_Contribution_Pdfs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071201067_NewModels_Uncertainty_Contribution_Pdfs01.resx">
-      <DependentUpon>202002071201067_NewModels_Uncertainty_Contribution_Pdfs01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071311473_NewModels_Uncertainty_Contribution_Pdfs02.resx">
-      <DependentUpon>202002071311473_NewModels_Uncertainty_Contribution_Pdfs02.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071416077_ChangePdFModel.resx">
-      <DependentUpon>202002071416077_ChangePdFModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071420574_ContributionChange.resx">
-      <DependentUpon>202002071420574_ContributionChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071424201_SeedDatabase.resx">
-      <DependentUpon>202002071424201_SeedDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071500149_CompleteModel.resx">
-      <DependentUpon>202002071500149_CompleteModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002141447255_AddUncertaintyIdToInstrumentClass.resx">
-      <DependentUpon>202002141447255_AddUncertaintyIdToInstrumentClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201151238_ChangePdf.resx">
-      <DependentUpon>202002201151238_ChangePdf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201153549_RemoveNavigationPdfFromContribution.resx">
-      <DependentUpon>202002201153549_RemoveNavigationPdfFromContribution.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201310062_BindPdfToContribution.resx">
-      <DependentUpon>202002201310062_BindPdfToContribution.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201312262_BindPdfToContributionA.resx">
-      <DependentUpon>202002201312262_BindPdfToContributionA.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201314290_BindPdfToContributionA1.resx">
-      <DependentUpon>202002201314290_BindPdfToContributionA1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201316446_BindPdfToContributionC.resx">
-      <DependentUpon>202002201316446_BindPdfToContributionC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201336459_OnceAgainPdf.resx">
-      <DependentUpon>202002201336459_OnceAgainPdf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201337406_AgainPdf.resx">
-      <DependentUpon>202002201337406_AgainPdf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201351565_empty.resx">
-      <DependentUpon>202002201351565_empty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201356112_newpdfs0.resx">
-      <DependentUpon>202002201356112_newpdfs0.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201357560_newpdfs1.resx">
-      <DependentUpon>202002201357560_newpdfs1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201401343_newpdfs3.resx">
-      <DependentUpon>202002201401343_newpdfs3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201425186_AddProbabilityDistribution.resx">
-      <DependentUpon>202002201425186_AddProbabilityDistribution.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201444054_AddProbabilityDistribution0.resx">
-      <DependentUpon>202002201444054_AddProbabilityDistribution0.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201448314_RemoveProbabilityDistribution1.resx">
-      <DependentUpon>202002201448314_RemoveProbabilityDistribution1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201453410_emptybox.resx">
-      <DependentUpon>202002201453410_emptybox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201454378_RemoveProbabilityDistribution2.resx">
-      <DependentUpon>202002201454378_RemoveProbabilityDistribution2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002251002521_AddUncertaintyBudget.resx">
+      <DependentUpon>202002251002521_AddUncertaintyBudget.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

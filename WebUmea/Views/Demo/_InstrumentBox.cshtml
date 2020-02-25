@@ -3,11 +3,12 @@
 <table class="table">
     @*<thead><tr><th>Key</th><th>Title</th><th>Uncertainty Constributions</th></tr></thead>*@
     
+
    @foreach (var group in Model)
     {
         <tr>
             <th>
-            Uncertainty Budget Id: @group.Key
+            Uncertainty Budget Id: @group.Key 
             </th>
             <th>
                 <button type="submit" class="btn btn-outline-primary">@Html.ActionLink("AddRow", "AddContribution", new { id = group.Key })</button>
@@ -26,12 +27,14 @@
             foreach (var item in group.Values)
             {
         <tr>
+
             <td>@item.ContributionId</td>
             <td>@item.Name</td>
             <td>@item.EstimatedValue</td>
             <td>@item.pdfId</td>
             <td>@item.SensitivityCoefficient</td>
             <td>@item.StandardUncertainty</td>
+          
             <td>
 
                 @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId }) |
@@ -42,5 +45,6 @@
             }
     }
 </table>
+
 
 

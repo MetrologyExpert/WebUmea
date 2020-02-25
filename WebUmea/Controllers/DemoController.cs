@@ -4,6 +4,7 @@ using System.Net;
 using System.Web.Mvc;
 using System.Web.Routing;
 using WebUmea.Models;
+using WebUmea.ViewModel;
 
 namespace WebUmea.Controllers
 {
@@ -33,11 +34,11 @@ namespace WebUmea.Controllers
         public ActionResult InstrumentView(int id)
         {
             var contributionViewData = from co in context.Contributions
-                                       join unc in context.UncertaintyBudget on co.UbId equals unc.UbId
+                                       join unc in context.UncertaintyBudgets on co.UbId equals unc.UbId
+                                       //join p in context.Pdfs on co.pdfId equals p.IdNumber
                                        where unc.InstrumentId == id
                                        group co by co.UbId into groupco
                                        select new DemoGroup<int, Contribution> { Key = groupco.Key, Values = groupco };
-
 
 
             return PartialView("~/Views/Demo/_InstrumentBox.cshtml", contributionViewData.ToList());
@@ -73,7 +74,7 @@ namespace WebUmea.Controllers
             var insQuery = context.Instruments.SingleOrDefault(c => c.InstrumentId == id);
 
 
-            var addUncertainty = context.UncertaintyBudget.Add(new UncertaintyBudget() { InstrumentId = id, AuthorId = 1, UserId = 1 });
+            var addUncertainty = context.UncertaintyBudgets.Add(new UncertaintyBudget() { InstrumentId = id, AuthorId = 1, UserId = 1 });
 
             var addRowToUncertainty = context.Contributions.Add(new Contribution() { UbId = addUncertainty.UbId });
             context.SaveChanges();
@@ -89,11 +90,11 @@ namespace WebUmea.Controllers
             context.Contributions.RemoveRange(removeRowToUncertainty);
 
             //Next delete Record from Uncertainty Budget Table
-            var ubTable = context.UncertaintyBudget.Single(ub => ub.UbId == id);
-            context.UncertaintyBudget.Remove(ubTable);
+            var ubTable = context.UncertaintyBudgets.Single(ub => ub.UbId == id);
+            context.UncertaintyBudgets.Remove(ubTable);
             context.SaveChanges();
 
-          
+
             return RedirectToAction("Index");
         }
 
@@ -103,10 +104,10 @@ namespace WebUmea.Controllers
             var AddRow = context.Contributions.Add(new Contribution() { UbId = id });
             context.SaveChanges();
 
-            var InsId = context.UncertaintyBudget.Single(ub => ub.UbId == id).InstrumentId;
-            return RedirectToAction("PageView", new RouteValueDictionary (new { Controller = "Demo", Action="PageView" , Id = InsId}));
+            var InsId = context.UncertaintyBudgets.Single(ub => ub.UbId == id).InstrumentId;
+            return RedirectToAction("PageView", new RouteValueDictionary(new { Controller = "Demo", Action = "PageView", Id = InsId }));
         }
-
+        // RedirectToAction("PageView", new RouteValueDictionary (new { Controller = "Demo", Action="PageView" , Id = InsId}));
         //Edit Contributions
         //**********************************************************************
 
@@ -123,7 +124,7 @@ namespace WebUmea.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UbId = new SelectList(context.UncertaintyBudget, "UbId", "UbId", contribution.UbId);
+            ViewBag.UbId = new SelectList(context.UncertaintyBudgets, "UbId", "UbId", contribution.UbId);
             return View(contribution);
         }
 
@@ -139,12 +140,12 @@ namespace WebUmea.Controllers
                 context.Entry(contribution).State = EntityState.Modified;
                 context.SaveChanges();
 
-                var InsId = context.UncertaintyBudget.Single(ub => ub.UbId == contribution.UbId).InstrumentId;
+                var InsId = context.UncertaintyBudgets.Single(ub => ub.UbId == contribution.UbId).InstrumentId;
                 return RedirectToAction("PageView", new RouteValueDictionary(new { Controller = "Demo", Action = "PageView", Id = InsId }));
 
                 //return RedirectToAction("Index");
             }
-            ViewBag.UbId = new SelectList(context.UncertaintyBudget, "UbId", "UbId", contribution.UbId);
+            ViewBag.UbId = new SelectList(context.UncertaintyBudgets, "UbId", "UbId", contribution.UbId);
             return View(contribution);
         }
 
@@ -173,7 +174,7 @@ namespace WebUmea.Controllers
             context.SaveChanges();
 
 
-            var InsId = context.UncertaintyBudget.Single(ub => ub.UbId == contribution.UbId).InstrumentId;
+            var InsId = context.UncertaintyBudgets.Single(ub => ub.UbId == contribution.UbId).InstrumentId;
             return RedirectToAction("PageView", new RouteValueDictionary(new { Controller = "Demo", Action = "PageView", Id = InsId }));
             //return RedirectToAction("Index");
         }

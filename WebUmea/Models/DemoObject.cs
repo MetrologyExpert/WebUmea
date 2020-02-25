@@ -9,7 +9,9 @@ namespace WebUmea.Models
     {
         
         public int UbId { get; set; }
-       
+
+        public Author Author { get; set; }
+
         public int ContributionIds { get; set; }
         public string ContributionName { get; set; }
         public double ContributionEstimatedValue { get; set; }
