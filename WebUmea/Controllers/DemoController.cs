@@ -40,6 +40,7 @@ namespace WebUmea.Controllers
                                        group co by co.UbId into groupco
                                        select new DemoGroup<int, Contribution> { Key = groupco.Key, Values = groupco };
 
+            
 
             return PartialView("~/Views/Demo/_InstrumentBox.cshtml", contributionViewData.ToList());
         }

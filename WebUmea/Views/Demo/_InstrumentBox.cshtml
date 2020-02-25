@@ -2,13 +2,14 @@
 
 <table class="table">
     @*<thead><tr><th>Key</th><th>Title</th><th>Uncertainty Constributions</th></tr></thead>*@
-    
 
-   @foreach (var group in Model)
+
+    @foreach (var group in Model)
     {
         <tr>
             <th>
-            Uncertainty Budget Id: @group.Key 
+                Uncertainty Budget @Html.Hidden("GroupKey", @group.Key)
+
             </th>
             <th>
                 <button type="submit" class="btn btn-outline-primary">@Html.ActionLink("AddRow", "AddContribution", new { id = group.Key })</button>
@@ -16,33 +17,33 @@
             </th>
         </tr>
         <tr>
-            <th>ContributionId</th>
             <th>Name</th>
             <th>EstimatedValue</th>
             <th>PdfId</th>
             <th>SensitivityCoefficient</th>
             <th>StandardUncertainty</th>
+            <th>Calculation</th>
             <th>Operation</th>
         </tr>
-            foreach (var item in group.Values)
-            {
-        <tr>
 
-            <td>@item.ContributionId</td>
-            <td>@item.Name</td>
-            <td>@item.EstimatedValue</td>
-            <td>@item.pdfId</td>
-            <td>@item.SensitivityCoefficient</td>
-            <td>@item.StandardUncertainty</td>
-          
-            <td>
-
-                @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ContributionId })
-            </td>
-        </tr>
-
-            }
+        foreach (var item in group.Values)
+        {
+            <tr>
+            
+                <td>@item.Name</td>
+                <td>@item.EstimatedValue</td>
+                <td>@item.pdfId</td>
+                <td>@item.SensitivityCoefficient</td>
+                <td>@item.StandardUncertainty</td>
+                <td>@item.Calculation</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ContributionId })
+                </td>
+            </tr>
+        }
+        <tr><th>Total Uncertainty:</th></tr>
+        <tr><td> @Math.Sqrt(group.Values.Sum(g => g.Calculation))</td></tr>
     }
 </table>
 

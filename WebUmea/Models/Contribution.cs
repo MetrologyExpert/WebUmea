@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
+
 namespace WebUmea.Models
 {
     public class Contribution
@@ -28,7 +29,14 @@ namespace WebUmea.Models
         //[ForeignKey("UbId")]
         public int UbId { get; set; }
         public UncertaintyBudget UncertaintyBudget { get; set; }
-        
 
+        public double Calculation
+        {
+            get
+            {
+
+                return Math.Sqrt(StandardUncertainty);
+            }
+        }
     }
 }
