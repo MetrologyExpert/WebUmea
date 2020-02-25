@@ -1,49 +1,67 @@
 ﻿@model List<WebUmea.Models.DemoGroup<int,WebUmea.Models.Contribution>>
 
-<table class="table">
+<table class="table" border="0" style="text-align:center">
     @*<thead><tr><th>Key</th><th>Title</th><th>Uncertainty Constributions</th></tr></thead>*@
-
-
+    @{int tableNo = 1; }
     @foreach (var group in Model)
     {
+
         <tr>
+
             <th>
-                Uncertainty Budget @Html.Hidden("GroupKey", @group.Key)
+                Uncertainty Budget @(tableNo++) @Html.Hidden("GroupKey", @group.Key)
 
             </th>
             <th>
                 <button type="submit" class="btn btn-outline-primary">@Html.ActionLink("AddRow", "AddContribution", new { id = group.Key })</button>
+            </th>
+            <th>
                 <button type="submit" class="btn btn-danger">@Html.ActionLink("Delete", "RemoveUncertainty", new { id = group.Key })</button>
             </th>
         </tr>
         <tr>
+            <th>Row Nr.</th>
             <th>Name</th>
-            <th>EstimatedValue</th>
+            <th>Estimated Value</th>
+            <th>Standard Uncertainty</th>
             <th>PdfId</th>
-            <th>SensitivityCoefficient</th>
-            <th>StandardUncertainty</th>
-            <th>Calculation</th>
+            <th>Sensitivity Coefficient</th>
+            <th>Standard Uncertainty</th>
+            <th>Standard Uncertainty<sup>2</sup></th>
             <th>Operation</th>
+            <th>
         </tr>
 
+
+        int rowNo = 1;
         foreach (var item in group.Values)
         {
-            <tr>
-            
-                <td>@item.Name</td>
-                <td>@item.EstimatedValue</td>
-                <td>@item.pdfId</td>
-                <td>@item.SensitivityCoefficient</td>
-                <td>@item.StandardUncertainty</td>
-                <td>@item.Calculation</td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ContributionId })
-                </td>
-            </tr>
+        <tr>
+            <td>@(rowNo++)</td>
+            <td>@item.Name</td>
+            <td>@item.EstimatedValue</td>
+            <td>@item.StandardUncertainty</td>
+            <td>@item.pdfId</td>
+            <td>@item.SensitivityCoefficient</td>
+            <td>@item.UncertaintyAfter_Calculation.ToString("N3")</td>
+            <td>@item.RMS_UncertaintyAfter_Calculation.ToString("N3")</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ContributionId })
+            </td>
+        </tr>
         }
-        <tr><th>Total Uncertainty:</th></tr>
-        <tr><td> @Math.Sqrt(group.Values.Sum(g => g.Calculation))</td></tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td><b>Total Uncertainty:</b> </td>
+            <td style="background-color:skyblue; "> @Math.Sqrt(group.Values.Sum(g => g.RMS_UncertaintyAfter_Calculation)).ToString("N3")</td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
     }
 </table>
 

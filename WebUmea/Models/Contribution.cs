@@ -30,12 +30,23 @@ namespace WebUmea.Models
         public int UbId { get; set; }
         public UncertaintyBudget UncertaintyBudget { get; set; }
 
-        public double Calculation
+
+        //Calculation
+        public double UncertaintyAfter_Calculation 
         {
             get
             {
 
-                return Math.Sqrt(StandardUncertainty);
+                return (SensitivityCoefficient*StandardUncertainty);
+            }
+        }
+
+        public double RMS_UncertaintyAfter_Calculation
+        {
+            get
+            {
+
+                return Math.Pow(UncertaintyAfter_Calculation, 2);
             }
         }
     }
