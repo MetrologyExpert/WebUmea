@@ -12,6 +12,8 @@ namespace WebUmea.Controllers
     {
         private ApplicationDbContext context = new ApplicationDbContext();
 
+        
+
         //Load List Of registered Instrument
         public ActionResult Index()
         {
@@ -31,16 +33,50 @@ namespace WebUmea.Controllers
         }
 
         //To Display All Associated Measurement Uncertainty Budgets to an Instrument
+
         public ActionResult InstrumentView(int id)
         {
             var contributionViewData = from co in context.Contributions
+                                       //join pd in context.Pdfs on co.Pdfs.IdNumber equals pd.IdNumber //(when I add pdfs I cant see results)
                                        join unc in context.UncertaintyBudgets on co.UbId equals unc.UbId
-                                       //join p in context.Pdfs on co.pdfId equals p.IdNumber
                                        where unc.InstrumentId == id
                                        group co by co.UbId into groupco
                                        select new DemoGroup<int, Contribution> { Key = groupco.Key, Values = groupco };
 
-            
+            //Direct pass via ViewModel - bind with _instrumentBoxY
+
+            //var contributionViewData = from co in context.Contributions
+            //                      join ub in context.UncertaintyBudgets on co.UbId equals ub.UbId
+            //                      join ins in context.Instruments on ub.InstrumentId equals ins.InstrumentId
+            //                      join p in context.Pdfs on co.pdfId equals p.IdNumber
+            //                      select new InstrumentUncBudgetViewModel()
+            //                      {
+            //                          ConId = co.ContributionId,
+            //                          QuantityName = co.Name,
+            //                          StdUnc = co.StandardUncertainty,
+            //                          PdfName = p.Name,
+            //                          InsName = ins.InstrumentName,
+            //                          UbId = co.UbId
+            //                      };
+
+            //select new DemoObject() { UbIds = co.UncertaintyBudget.UbId, PdfName = p.Name };
+            //join unc in context.UncertaintyBudgets on co.UbId equals unc.UbId
+            //where unc.InstrumentId == id
+            //group co by co.UbId into groupco
+            //select new DemoGroup< int, Contribution> { Key = groupco.Key, Values = groupco };
+
+            //var contributionViewData = context.Contributions.Join(context.UncertaintyBudgets, 
+            //    co => co.UbId, 
+            //    un => un.UbId, 
+            //    (co,un) => new DemoObject{  ContributionIds = co.ContributionId,
+            //                      InsId = un.InstrumentId }).ToList();
+
+            //var contributionViewData = context.Contributions.Join(context.UncertaintyBudgets, unc => unc.UbId, co => co.UbId, (co, unc) => new { co, unc }).
+            //                                                 Join(context.Pdfs, p => p.co.pdfId, pd => pd.IdNumber, (p, pd) => new { p, pd }).
+            //                                                 Where(u => u.p.unc.InstrumentId == id).
+            //                                                 GroupBy(c => c.p.unc.UbId).ToList();
+
+            //**************With each LINQ Query is there a problem of threading 
 
             return PartialView("~/Views/Demo/_InstrumentBox.cshtml", contributionViewData.ToList());
         }

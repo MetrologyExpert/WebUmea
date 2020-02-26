@@ -8,7 +8,7 @@ namespace WebUmea.Models
     public class DemoObject
     {
         
-        public int UbId { get; set; }
+        public int UbIds { get; set; }
 
         public Author Author { get; set; }
 
@@ -17,6 +17,10 @@ namespace WebUmea.Models
         public double ContributionEstimatedValue { get; set; }
         public double ContributionSensitivityCoefficient { get; set; }
         public double StandardUncertainty { get; set; }
+
+        public string PdfName { get; set; }
+
+        public int InsId { get; set; }
 
     }
 }

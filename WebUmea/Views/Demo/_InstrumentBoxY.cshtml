@@ -1,0 +1,38 @@
+﻿
+@model IEnumerable<WebUmea.ViewModel.InstrumentUncBudgetViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+
+
+    @foreach (var group in Model.GroupBy(item => item.UbId))
+    {
+        <tr>
+            <td>
+                Uncertainty Budget: @group.Key
+            </td>
+        </tr>
+        foreach (var item in group)
+
+        {
+        <tr>
+            <td>@item.ConId</td>
+         
+            <td>@item.QuantityName</td>
+            <td>@item.StdUnc</td>
+            <td>@item.PdfName</td>
+            <td>@item.InsName</td>
+            <td>@item</td>
+            
+        </tr>
+        }
+    }
+
+
+</table>

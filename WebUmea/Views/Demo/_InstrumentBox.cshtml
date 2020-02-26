@@ -23,10 +23,10 @@
             <th>Row Nr.</th>
             <th>Name</th>
             <th>Estimated Value</th>
-            <th>Standard Uncertainty</th>
+            <th>Standard Uncertainty (Before)</th>
             <th>PdfId</th>
             <th>Sensitivity Coefficient</th>
-            <th>Standard Uncertainty</th>
+            <th>Standard Uncertainty (After) </th>
             <th>Standard Uncertainty<sup>2</sup></th>
             <th>Operation</th>
             <th>
@@ -46,7 +46,9 @@
             <td>@item.UncertaintyAfter_Calculation.ToString("N3")</td>
             <td>@item.RMS_UncertaintyAfter_Calculation.ToString("N3")</td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId })
+            </td>
+            <td>
                 @Html.ActionLink("Delete", "Delete", new { id = item.ContributionId })
             </td>
         </tr>
@@ -55,9 +57,10 @@
             <td> </td>
             <td> </td>
             <td> </td>
+            <td> </td>
+            <td> </td>
             <td><b>Total Uncertainty:</b> </td>
             <td style="background-color:skyblue; "> @Math.Sqrt(group.Values.Sum(g => g.RMS_UncertaintyAfter_Calculation)).ToString("N3")</td>
-            <td> </td>
             <td> </td>
             <td> </td>
             <td> </td>

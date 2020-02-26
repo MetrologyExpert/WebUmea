@@ -24,11 +24,13 @@ namespace WebUmea.Models
 
         //Navigation Properties
         public int pdfId { get; set; }
-     
+        public Pdf Pdfs { get; set; }
 
         //[ForeignKey("UbId")]
         public int UbId { get; set; }
         public UncertaintyBudget UncertaintyBudget { get; set; }
+
+
 
 
         //Calculation

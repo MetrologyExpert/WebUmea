@@ -206,6 +206,10 @@
     <Compile Include="Migrations\202002251002521_AddUncertaintyBudget.designer.cs">
       <DependentUpon>202002251002521_AddUncertaintyBudget.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002260931169_AddLinkPdf.cs" />
+    <Compile Include="Migrations\202002260931169_AddLinkPdf.designer.cs">
+      <DependentUpon>202002260931169_AddLinkPdf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
@@ -226,6 +230,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\InstrumentUncBudgetViewModel.cs" />
     <Compile Include="ViewModel\ubTable.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -365,6 +370,7 @@
     <Content Include="Views\Demo\UncertaintyTable.cshtml" />
     <Content Include="Views\Demo\_InstrumentBox.cshtml" />
     <Content Include="Views\Demo\_UncertaintyBudgetView.cshtml" />
+    <Content Include="Views\Demo\_InstrumentBoxY.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002251002521_AddUncertaintyBudget.resx">
       <DependentUpon>202002251002521_AddUncertaintyBudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002260931169_AddLinkPdf.resx">
+      <DependentUpon>202002260931169_AddLinkPdf.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
