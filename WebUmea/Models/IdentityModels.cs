@@ -27,18 +27,18 @@ namespace WebUmea.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+          
         }
-
-     
 
         public DbSet<Instrument> Instruments { get; set; }
         public DbSet<Contribution> Contributions { get; set; }
-    
         public DbSet<Author> Authors { get; set; }
-
         public DbSet<UncertaintyBudget> UncertaintyBudgets { get; set; }
- 
         public DbSet<Pdf> Pdfs { get; set; }
+        public DbSet<ImageGallery> ImageGallerys { get; set; }
+
+
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

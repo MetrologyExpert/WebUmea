@@ -81,7 +81,7 @@ namespace WebUmea.Controllers
             return PartialView("~/Views/Demo/_InstrumentBox.cshtml", contributionViewData.ToList());
         }
 
-
+        
         // To Register A New Instrument - Add New Instrument
         public ActionResult CreateInstrument()
         {
@@ -103,6 +103,96 @@ namespace WebUmea.Controllers
             }
 
             return View(instrument);
+        }
+
+        // GET: Instruments/Edit/5
+        public ActionResult EditInstrument(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Instrument instrument = context.Instruments.Find(id);
+            if (instrument == null)
+            {
+                return HttpNotFound();
+            }
+            return View(instrument);
+        }
+
+        // POST: Instruments/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditInstrument([Bind(Include = "InstrumentId,InstrumentName,Manufacturer,InstrumentModel,Description,UncertaintyId")] Instrument instrument)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Entry(instrument).State = EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(instrument);
+        }
+
+            // GET: Instruments/Delete/5
+            public ActionResult DeleteInstrument(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Instrument instrument = context.Instruments.Find(id);
+            if (instrument == null)
+            {
+                return HttpNotFound();
+            }
+            return View(instrument);
+        }
+
+        // POST: Instruments/Delete/5
+        [HttpPost, ActionName("DeleteInstrument")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteInstrumentConfirmed(int id)
+
+        {   var delContribution = context.Contributions.Where(c => c.UncertaintyBudget.InstrumentId == id).ToList();
+            context.Contributions.RemoveRange(delContribution);
+
+            var delUnc = context.UncertaintyBudgets.Where(u => u.InstrumentId == id).ToList();
+            context.UncertaintyBudgets.RemoveRange(delUnc);
+
+            Instrument instrument = context.Instruments.Find(id);
+           context.Instruments.Remove(instrument);
+           context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        
+        public ActionResult DelIns(int id) {
+
+            var ins = context.Instruments.Single(i => i.InstrumentId == id);
+
+            //var delContribution = context.Contributions.Where(c => c.UncertaintyBudget.InstrumentId == id).ToList();
+            //context.Contributions.RemoveRange(delContribution);
+
+            //var delUnc = context.UncertaintyBudgets.Where(u => u.InstrumentId == id).ToList();
+            //context.UncertaintyBudgets.RemoveRange(delUnc);
+
+            //var delIns = context.Instruments.Where(i => i.InstrumentId == id).ToList();
+            //context.Instruments.RemoveRange(delIns);
+
+            //context.SaveChanges();
+
+            //context.SaveChanges();
+            //var InsId = context.UncertaintyBudgets.Single(ub => ub.UbId == .UbId).InstrumentId;
+            //return RedirectToAction("PageView", new RouteValueDictionary(new { Controller = "Demo", Action = "PageView", Id = InsId }));
+            //return RedirectToAction("Index");
+
+            //var delInstrument = context.Instruments.Single(i => i.InstrumentId == id);
+            //context.Instruments.Remove(delInstrument);
+            //context.SaveChanges();
+
+            return RedirectToAction("DeleteInstrument", new RouteValueDictionary(new { Controller = "Demo", Action = "DeleteInstrument", Id = id }));
         }
 
         //To Add A New Measurement Uncertainty Budget Table To An Instrument 

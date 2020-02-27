@@ -16,6 +16,8 @@
         <th>Instrument Name</th>
         <th>Instrument Manufacturer</th>
         <th>Instrument Model</th>
+        <th>Operation</th>
+        <th></th>
 
     </tr>
     <tr>
@@ -23,6 +25,8 @@
         <td> @Html.DisplayFor(model => model.InstrumentName)</td>
         <td> @Html.DisplayFor(model => model.Manufacturer)</td>
         <td> @Html.DisplayFor(model => model.InstrumentModel)</td>
+        <td><button class="btn btn-outline-primary"> @Html.ActionLink("Edit", "EditInstrument", new { id = Model.InstrumentId })</button></td>
+        <td><button class="btn btn-danger"> @Html.ActionLink("Delete", "DeleteInstrument", new { id = Model.InstrumentId })</button></td>
     </tr>
 </table>
 <br />

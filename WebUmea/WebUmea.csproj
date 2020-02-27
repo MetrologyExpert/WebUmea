@@ -193,6 +193,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageGalleriesController.cs" />
+    <Compile Include="Controllers\InstrumentsController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -210,6 +212,14 @@
     <Compile Include="Migrations\202002260931169_AddLinkPdf.designer.cs">
       <DependentUpon>202002260931169_AddLinkPdf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002261614484_RunEmpty.cs" />
+    <Compile Include="Migrations\202002261614484_RunEmpty.designer.cs">
+      <DependentUpon>202002261614484_RunEmpty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002261626076_ImageGallery.cs" />
+    <Compile Include="Migrations\202002261626076_ImageGallery.designer.cs">
+      <DependentUpon>202002261626076_ImageGallery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
@@ -219,6 +229,7 @@
     <Compile Include="Models\DemoInstrument.cs" />
     <Compile Include="Models\DemoObject.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImageGallery.cs" />
     <Compile Include="Models\Instrument.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NewContribution.cs" />
@@ -238,21 +249,33 @@
     <Content Include="Content\bootstrap-litera.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fancybox_loading.gif" />
+    <Content Include="Content\fancybox_overlay.png" />
+    <Content Include="Content\fancybox_sprite.png" />
+    <Content Include="Content\fullscreenButton.png" />
+    <Content Include="Content\jquery.fancybox.css" />
     <Content Include="Content\Pictures\3d-scanners-uk.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\3d-scanners-uk.png" />
+    <Content Include="Scripts\blank.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\fancybox_loading.gif" />
+    <Content Include="Scripts\fancybox_overlay.png" />
+    <Content Include="Scripts\fancybox_sprite.png" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.fancybox.css" />
+    <Content Include="Scripts\jquery.fancybox.js" />
+    <Content Include="Scripts\jquery.mousewheel-3.0.6.pack.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -260,6 +283,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Summernote\dist\lang\summernote-ar-AR.js" />
     <Content Include="Summernote\dist\lang\summernote-bg-BG.js" />
     <Content Include="Summernote\dist\lang\summernote-ca-ES.js" />
@@ -317,6 +341,14 @@
     <Content Include="Summernote\dist\summernote.js" />
     <Content Include="Summernote\dist\summernote.min.js" />
     <Content Include="Summernote\Summernotefile.css" />
+    <Content Include="Upload_Files\173_7373_1024x768.jpg" />
+    <Content Include="Upload_Files\389807_304852796222253_371344580_n.jpg" />
+    <Content Include="Upload_Files\77.jpg" />
+    <Content Include="Upload_Files\arms008.jpg" />
+    <Content Include="Upload_Files\arms020.jpg" />
+    <Content Include="Upload_Files\birds-147a.jpg" />
+    <Content Include="Upload_Files\birds-151a.jpg" />
+    <Content Include="Upload_Files\birds-152a.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -371,6 +403,15 @@
     <Content Include="Views\Demo\_InstrumentBox.cshtml" />
     <Content Include="Views\Demo\_UncertaintyBudgetView.cshtml" />
     <Content Include="Views\Demo\_InstrumentBoxY.cshtml" />
+    <Content Include="Views\ImageGalleries\Index.cshtml" />
+    <Content Include="Views\ImageGalleries\UploadImage.cshtml" />
+    <Content Include="Views\Demo\EditInstrument.cshtml" />
+    <Content Include="Views\Demo\DeleteInstrument.cshtml" />
+    <Content Include="Views\Instruments\Create.cshtml" />
+    <Content Include="Views\Instruments\Delete.cshtml" />
+    <Content Include="Views\Instruments\Details.cshtml" />
+    <Content Include="Views\Instruments\Edit.cshtml" />
+    <Content Include="Views\Instruments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -397,6 +438,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002260931169_AddLinkPdf.resx">
       <DependentUpon>202002260931169_AddLinkPdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002261614484_RunEmpty.resx">
+      <DependentUpon>202002261614484_RunEmpty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002261626076_ImageGallery.resx">
+      <DependentUpon>202002261626076_ImageGallery.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
