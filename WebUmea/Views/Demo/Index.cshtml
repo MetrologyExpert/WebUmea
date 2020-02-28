@@ -23,6 +23,7 @@
     {
     <tr>
         <td>@Html.ActionLink(item.InstrumentId.ToString(), "PageView", new { htmlAttributes = new { @class = "success", id = item.InstrumentId } })</td>
+        @*td>@Html.ActionLink(linkText:item.InstrumentName.ToString(), actionName:"Index", controllerName:"Simulation", routeValues: new {id = item.InstrumentId }, htmlAttributes:null )</td>*@
         <td>@Html.ActionLink(item.InstrumentName.ToString(), "PageView", new { id = item.InstrumentId })</td>
         <td>@Html.ActionLink(item.Manufacturer.ToString(), "PageView", new { id = item.InstrumentId })</td>
         <td>@Html.ActionLink(item.InstrumentModel.ToString(), "PageView", new { id = item.InstrumentId })</td>

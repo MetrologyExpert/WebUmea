@@ -7,20 +7,28 @@ namespace WebUmea.Models
 {
     public class DemoObject
     {
+        public int coId { get; set; }
+
+        public string coSym { get; set; }
+
+        public string coName { get; set; }
+
+        public double coEstimatedValue { get; set; }
+
+        public double coStdUnc { get; set; }
+
+        public double coSC { get; set; }
+
+        public string Distribution { get; set; }
+
+        public string InsName { get; set; }
+
+        public string AuName { get; set; }
+
+        public int ubID { get; set; }
+
+        public double StdUncCalc { get; set; }
         
-        public int UbIds { get; set; }
-
-        public Author Author { get; set; }
-
-        public int ContributionIds { get; set; }
-        public string ContributionName { get; set; }
-        public double ContributionEstimatedValue { get; set; }
-        public double ContributionSensitivityCoefficient { get; set; }
-        public double StandardUncertainty { get; set; }
-
-        public string PdfName { get; set; }
-
-        public int InsId { get; set; }
 
     }
 }

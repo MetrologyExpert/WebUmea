@@ -193,10 +193,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ImageGalleriesController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\InstrumentsController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SimulationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,6 +221,30 @@
     <Compile Include="Migrations\202002261626076_ImageGallery.designer.cs">
       <DependentUpon>202002261626076_ImageGallery.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002281449467_removeImage.cs" />
+    <Compile Include="Migrations\202002281449467_removeImage.designer.cs">
+      <DependentUpon>202002281449467_removeImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281500111_AddImage.cs" />
+    <Compile Include="Migrations\202002281500111_AddImage.designer.cs">
+      <DependentUpon>202002281500111_AddImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281514545_RenameImage.cs" />
+    <Compile Include="Migrations\202002281514545_RenameImage.designer.cs">
+      <DependentUpon>202002281514545_RenameImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281535489_ImageFile.cs" />
+    <Compile Include="Migrations\202002281535489_ImageFile.designer.cs">
+      <DependentUpon>202002281535489_ImageFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281537467_ImageFile0.cs" />
+    <Compile Include="Migrations\202002281537467_ImageFile0.designer.cs">
+      <DependentUpon>202002281537467_ImageFile0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281601098_ImageFile1.cs" />
+    <Compile Include="Migrations\202002281601098_ImageFile1.designer.cs">
+      <DependentUpon>202002281601098_ImageFile1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
@@ -229,7 +254,7 @@
     <Compile Include="Models\DemoInstrument.cs" />
     <Compile Include="Models\DemoObject.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ImageGallery.cs" />
+    <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Instrument.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NewContribution.cs" />
@@ -341,14 +366,6 @@
     <Content Include="Summernote\dist\summernote.js" />
     <Content Include="Summernote\dist\summernote.min.js" />
     <Content Include="Summernote\Summernotefile.css" />
-    <Content Include="Upload_Files\173_7373_1024x768.jpg" />
-    <Content Include="Upload_Files\389807_304852796222253_371344580_n.jpg" />
-    <Content Include="Upload_Files\77.jpg" />
-    <Content Include="Upload_Files\arms008.jpg" />
-    <Content Include="Upload_Files\arms020.jpg" />
-    <Content Include="Upload_Files\birds-147a.jpg" />
-    <Content Include="Upload_Files\birds-151a.jpg" />
-    <Content Include="Upload_Files\birds-152a.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -400,11 +417,9 @@
     <Content Include="Views\Demo\Index.cshtml" />
     <Content Include="Views\Demo\PageView.cshtml" />
     <Content Include="Views\Demo\UncertaintyTable.cshtml" />
-    <Content Include="Views\Demo\_InstrumentBox.cshtml" />
+    <Content Include="Views\Demo\_InstrumentBox_O.cshtml" />
     <Content Include="Views\Demo\_UncertaintyBudgetView.cshtml" />
     <Content Include="Views\Demo\_InstrumentBoxY.cshtml" />
-    <Content Include="Views\ImageGalleries\Index.cshtml" />
-    <Content Include="Views\ImageGalleries\UploadImage.cshtml" />
     <Content Include="Views\Demo\EditInstrument.cshtml" />
     <Content Include="Views\Demo\DeleteInstrument.cshtml" />
     <Content Include="Views\Instruments\Create.cshtml" />
@@ -412,9 +427,15 @@
     <Content Include="Views\Instruments\Details.cshtml" />
     <Content Include="Views\Instruments\Edit.cshtml" />
     <Content Include="Views\Instruments\Index.cshtml" />
+    <Content Include="Views\Demo\_InstrumentBox.cshtml" />
+    <Content Include="Views\Simulation\Index.cshtml" />
+    <Content Include="Views\Simulation\CreateInstrument.cshtml" />
+    <Content Include="Views\Image\Add.cshtml" />
+    <Content Include="Views\Image\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -444,6 +465,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002261626076_ImageGallery.resx">
       <DependentUpon>202002261626076_ImageGallery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281449467_removeImage.resx">
+      <DependentUpon>202002281449467_removeImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281500111_AddImage.resx">
+      <DependentUpon>202002281500111_AddImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281514545_RenameImage.resx">
+      <DependentUpon>202002281514545_RenameImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281535489_ImageFile.resx">
+      <DependentUpon>202002281535489_ImageFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281537467_ImageFile0.resx">
+      <DependentUpon>202002281537467_ImageFile0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281601098_ImageFile1.resx">
+      <DependentUpon>202002281601098_ImageFile1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

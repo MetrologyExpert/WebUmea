@@ -1,9 +1,9 @@
-﻿@model List<WebUmea.Models.DemoGroup<int, WebUmea.Models.Contribution>>
+﻿@model IEnumerable<WebUmea.Models.DemoObject>
 
 <table class="table" border="0" style="text-align:center">
     @*<thead><tr><th>Key</th><th>Title</th><th>Uncertainty Constributions</th></tr></thead>*@
     @{int tableNo = 1; }
-    @foreach (var group in Model)
+    @foreach (var group in Model.GroupBy(c => c.ubID))
     {
 
         <tr>
@@ -28,30 +28,32 @@
             <th>Sensitivity Coefficient</th>
             <th>Standard Uncertainty (After) </th>
             <th>Standard Uncertainty<sup>2</sup></th>
-            <th colspan="2">Operation</th>
+            <th>Operation</th>
+            <th>
         </tr>
 
 
         int rowNo = 1;
-        foreach (var item in group.Values)
+        foreach (var item in Model)
         {
             <tr>
-                <td>@(rowNo++)</td>
-                <td>@Html.DisplayFor(co => item.Name)</td>
-                <td>@item.EstimatedValue</td>
-                <td>@item.StandardUncertainty</td>
-                <td>@item.pdfId</td>
-                <td>@item.SensitivityCoefficient</td>
-                <td>@item.UncertaintyAfter_Calculation.ToString("N3")</td>
-                <td>@item.RMS_UncertaintyAfter_Calculation.ToString("N3")</td>
+            <tr>
+                <td>@item.coId</td>
+                <td>@item.coSym</td>
+                <td>@item.coName</td>
+                <td>@item.coEstimatedValue</td>
+                <td>@item.coStdUnc</td>
+                <td>@item.Distribution</td>
+                <td>@item.coSC</td>
+                <td>@item.AuName</td>
+            </tr>
 
-
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ContributionId })
-                </td>
-                <td>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ContributionId })
-                </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.coId })
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.coId })
+            </td>
             </tr>
         }
         <tr>
@@ -61,13 +63,10 @@
             <td> </td>
             <td> </td>
             <td><b>Total Uncertainty:</b> </td>
-            <td style="background-color:skyblue; "> @Math.Sqrt(group.Values.Sum(g => g.RMS_UncertaintyAfter_Calculation)).ToString("N3")</td>
+            @*<td style="background-color:skyblue; "> @Math.Sqrt(Model.Sum(g => g.)).ToString("N3")</td>*@
             <td> </td>
             <td> </td>
             <td> </td>
         </tr>
     }
 </table>
-
-
-

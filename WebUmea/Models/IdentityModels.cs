@@ -35,9 +35,7 @@ namespace WebUmea.Models
         public DbSet<Author> Authors { get; set; }
         public DbSet<UncertaintyBudget> UncertaintyBudgets { get; set; }
         public DbSet<Pdf> Pdfs { get; set; }
-        public DbSet<ImageGallery> ImageGallerys { get; set; }
-
-
+        public DbSet<Image> Images { get; set; }
 
         public static ApplicationDbContext Create()
         {

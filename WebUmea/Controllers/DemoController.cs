@@ -37,11 +37,22 @@ namespace WebUmea.Controllers
         public ActionResult InstrumentView(int id)
         {
             var contributionViewData = from co in context.Contributions
-                                       //join pd in context.Pdfs on co.Pdfs.IdNumber equals pd.IdNumber //(when I add pdfs I cant see results)
-                                       join unc in context.UncertaintyBudgets on co.UbId equals unc.UbId
+                                       //(when I add pdfs I cant see results)
+                                      join unc in context.UncertaintyBudgets on co.UbId equals unc.UbId
+                                      join p in context.Pdfs on co.pdfId equals p.IdNumber
                                        where unc.InstrumentId == id
-                                       group co by co.UbId into groupco
-                                       select new DemoGroup<int, Contribution> { Key = groupco.Key, Values = groupco };
+                                      group co by co.UbId into groupco
+                                      select new DemoGroup<int, Contribution> { Key = groupco.Key, Values = groupco };
+
+
+
+
+            //var contributionViewData = from co in context.Contributions
+            //                           //(when I add pdfs I cant see results)
+            //                           join unc in context.UncertaintyBudgets on co.UbId equals unc.UbId
+            //                           where unc.InstrumentId == id
+            //                           group co by co.UbId into groupco
+            //                           select new DemoGroup<int, Contribution> { Key = groupco.Key, Values = groupco };
 
             //Direct pass via ViewModel - bind with _instrumentBoxY
 
@@ -306,6 +317,7 @@ namespace WebUmea.Controllers
             //return RedirectToAction("Index");
         }
 
+       
         protected override void Dispose(bool disposing)
         {
             if (disposing)
