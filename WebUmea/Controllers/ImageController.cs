@@ -12,7 +12,13 @@ namespace WebUmea.Controllers
 {
     public class ImageController : Controller
     {
-        ApplicationDbContext context = new ApplicationDbContext();
+        ApplicationDbContext db = new ApplicationDbContext();
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
 
         // GET: Image
         public ActionResult Add()
@@ -29,22 +35,35 @@ namespace WebUmea.Controllers
             imageModel.ImagePath = "~/Image/" + fileName;
             fileName = Path.Combine(Server.MapPath("~/Image/"), fileName);
             imageModel.ImageFile.SaveAs(fileName);
-            context.Images.Add(imageModel);
-            context.SaveChanges();
+
+            db.Images.Add(imageModel);
+                db.SaveChanges();
+            
+          
 
             ModelState.Clear();
                 return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult View(int id) {
 
             Image imageModel = new Image();
 
-            context.Images.Where(x => x.ImageID == id).FirstOrDefault();
+            imageModel = db.Images.Where(x => x.ImageID == id).Single();
 
+           return View(imageModel);
+        }
 
-            return View();
+        [HttpGet]
+        public ActionResult MediaLibrary()
+        {
+
+            var library = db.Images.ToList();
+
+            return View("MediaLibrary",library);
+
+       
         }
     }
 }

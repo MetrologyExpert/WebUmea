@@ -285,6 +285,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\3d-scanners-uk.png" />
+    <Content Include="Images\photo1.jpg" />
+    <Content Include="Images\photo2.jpg" />
+    <Content Include="Images\photo3.jpg" />
     <Content Include="Scripts\blank.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -432,6 +435,8 @@
     <Content Include="Views\Simulation\CreateInstrument.cshtml" />
     <Content Include="Views\Image\Add.cshtml" />
     <Content Include="Views\Image\View.cshtml" />
+    <Content Include="Views\Image\Index.cshtml" />
+    <Content Include="Views\Image\MediaLibrary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
