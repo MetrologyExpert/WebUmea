@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<WebUmea.Models.Image>
+
+
 @{
     ViewBag.Title = "MediaLibrary";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,11 +8,20 @@
 
 <h2>MediaLibrary</h2>
 
-<table class="table">
-    <tr>
-        @foreach (var item in Model)
-         {
-        <td><img src="@Url.Content(item.ImagePath)" width="250" height="250"></td>
-         }
-    </tr>
-    </table>
+  
+ 
+<table border="1">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><img src="@Url.Content(item.ImagePath)" width="250" height="250"></td>
+        </tr>
+        <tr>
+            <td> @Url.Content(item.ImagePath)</td>
+        </tr>
+            }
+</table>
+ 
+
+
+

@@ -21,16 +21,17 @@ namespace WebUmea.Controllers
 
                                        join au in context.Authors on unc.AuthorId equals au.AuthorId
                                        where unc.InstrumentId == id
+                                       
                                        select new DemoObject()
                                        {
                                            coId = co.ContributionId,
-                                           coSym =co.Symbol,
-                                           coName =co.Name,
-                                           coEstimatedValue =co.EstimatedValue,
+                                           coSym = co.Symbol,
+                                           coName = co.Name,
+                                           coEstimatedValue = co.EstimatedValue,
                                            Distribution = pd.Name,
                                            coStdUnc = co.StandardUncertainty,
                                            coSC = co.SensitivityCoefficient,
-                                         
+
                                            InsName = ins.InstrumentName,
                                            AuName = au.Name
                                        };

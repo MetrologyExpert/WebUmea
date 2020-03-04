@@ -44,7 +44,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.TextAreaFor(model => model.Description, new { id = ("summernote"), htmlAttributes = new { @class = "form-control" } })
+            @Html.TextAreaFor(model => model.Description, new { id = ("summernote") @*or id=("summernote")*@, htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -73,6 +73,7 @@
         // Initialize plugin
         $(document).ready(function () {
             $('#summernote').summernote({
+                airMode: true,
                 toolbar: [
                     //[groupname, [button list]]
 

@@ -32,14 +32,26 @@ namespace WebUmea.Controllers
             return View("PageView", insQuery);
         }
 
+
+
+        //Call Detail Page View of a selected Instrument
+        public ActionResult UserPageView(int id)
+        {
+            var insQuery = context.Instruments.SingleOrDefault(c => c.InstrumentId == id);
+            Instrument instrument = insQuery;
+
+            return View("UserPageView", insQuery);
+        }
+
+        
         //To Display All Associated Measurement Uncertainty Budgets to an Instrument
 
         public ActionResult InstrumentView(int id)
         {
             var contributionViewData = from co in context.Contributions
-                                       //(when I add pdfs I cant see results)
+                                       //(Attention!!!!! when I add pdfs I cant see results)
                                       join unc in context.UncertaintyBudgets on co.UbId equals unc.UbId
-                                      join p in context.Pdfs on co.pdfId equals p.IdNumber
+                                      //join p in context.Pdfs on co.pdfId equals p.IdNumber
                                        where unc.InstrumentId == id
                                       group co by co.UbId into groupco
                                       select new DemoGroup<int, Contribution> { Key = groupco.Key, Values = groupco };
@@ -92,7 +104,27 @@ namespace WebUmea.Controllers
             return PartialView("~/Views/Demo/_InstrumentBox.cshtml", contributionViewData.ToList());
         }
 
-        
+        public ActionResult UserInstrumentView(int id)
+        {
+            var contributionViewData = from co in context.Contributions
+                                           //(Attention!!!!! when I add pdfs I cant see results)
+                                       join unc in context.UncertaintyBudgets on co.UbId equals unc.UbId
+                                       //join p in context.Pdfs on co.pdfId equals p.IdNumber
+                                       where unc.InstrumentId == id
+                                       group co by co.UbId into groupco
+                                       select new DemoGroup<int, Contribution> { Key = groupco.Key, Values = groupco };
+
+
+            return PartialView("~/Views/Demo/_UserInstrumentBox.cshtml", contributionViewData.ToList());
+        }
+
+
+
+
+
+
+
+
         // To Register A New Instrument - Add New Instrument
         public ActionResult CreateInstrument()
         {

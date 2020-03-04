@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<WebUmea.Models.DemoObject>
 
-<table class="table" border="0" style="text-align:center">
+<table class="table" border="0" style="text-align:center; overflow-x:auto;">
     @*<thead><tr><th>Key</th><th>Title</th><th>Uncertainty Constributions</th></tr></thead>*@
     @{int tableNo = 1; }
     @foreach (var group in Model.GroupBy(c => c.ubID))
@@ -32,12 +32,12 @@
             <th>
         </tr>
 
-
-        int rowNo = 1;
+        
         foreach (var item in Model)
         {
             <tr>
-            <tr>
+            
+                <td></td>
                 <td>@item.coId</td>
                 <td>@item.coSym</td>
                 <td>@item.coName</td>
@@ -45,15 +45,55 @@
                 <td>@item.coStdUnc</td>
                 <td>@item.Distribution</td>
                 <td>@item.coSC</td>
-                <td>@item.AuName</td>
-            </tr>
-
+             
+            
+            
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.coId })
-            </td>
-            <td>
                 @Html.ActionLink("Delete", "Delete", new { id = item.coId })
             </td>
+            </tr>
+        }
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td><b>Total Uncertainty:</b> </td>
+            @*<td style="background-color:skyblue; "> @Math.Sqrt(Model.Sum(g => g.)).ToString("N3")</td>*@
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+    }
+</table>
+
+
+
+<table class="table" border="0" style="text-align:center">
+    @*<thead><tr><th>Key</th><th>Title</th><th>Uncertainty Constributions</th></tr></thead>*@
+ 
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td></td>
+                <td>@item.coId</td>
+                <td>@item.coSym</td>
+                <td>@item.coName</td>
+                <td>@item.coEstimatedValue</td>
+                <td>@item.coStdUnc</td>
+                <td>@item.Distribution</td>
+                <td>@item.coSC</td>
+
+
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.coId })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.coId })
+                </td>
             </tr>
         }
         <tr>

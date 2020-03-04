@@ -437,6 +437,8 @@
     <Content Include="Views\Image\View.cshtml" />
     <Content Include="Views\Image\Index.cshtml" />
     <Content Include="Views\Image\MediaLibrary.cshtml" />
+    <Content Include="Views\Demo\UserPageView.cshtml" />
+    <Content Include="Views\Demo\_UserInstrumentBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

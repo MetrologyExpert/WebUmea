@@ -7,9 +7,8 @@
 }
 
 <h2>Instrument Sheet</h2>
-<br />
-<button class="btn btn-outline-primary"> @Html.ActionLink("Page View", "UserPageView", new { id = Model.InstrumentId })</button>
-<br />
+</br>
+
 <br />
 <table class="table"  style="text-align:center">
     <tr>
@@ -17,15 +16,13 @@
         <th>Instrument Name</th>
         <th>Instrument Manufacturer</th>
         <th>Instrument Model</th>
-        <th colspan="2">Operation</th>
+   
     </tr>
     <tr>
         <td> @Html.DisplayFor(model => model.InstrumentId)</td>
         <td> @Html.DisplayFor(model => model.InstrumentName)</td>
         <td> @Html.DisplayFor(model => model.Manufacturer)</td>
         <td> @Html.DisplayFor(model => model.InstrumentModel)</td>
-        <td><button class="btn btn-outline-primary"> @Html.ActionLink("Edit", "EditInstrument", new { id = Model.InstrumentId })</button></td>
-        <td><button class="btn btn-danger"> @Html.ActionLink("Delete", "DeleteInstrument", new { id = Model.InstrumentId })</button></td>
     </tr>
 </table>
 <br />
@@ -38,11 +35,11 @@
 </table>
         <br />
         <br />
-        <button class="btn btn-outline-primary"> @Html.ActionLink("Add New UncertaintyBudget", "AddNewUncertainty", new { id = Model.InstrumentId })</button>
+      
         <br />
         <br />
 
-        @{ Html.RenderAction("InstrumentView");}
+        @{ Html.RenderAction("UserInstrumentView");}
 
 
 
